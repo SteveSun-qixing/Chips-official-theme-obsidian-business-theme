@@ -1,0 +1,13 @@
+# Chips Develop CLI Mock 配置
+# 用于开发模式下模拟 Bridge API 响应
+
+services:
+  # i18n.translate:
+  #   result: "翻译结果"
+
+events:
+  # theme.changed:
+  #   themeId: "chips-official.default-theme"
+
+files:
+  # /test/file.txt: "文件内容"

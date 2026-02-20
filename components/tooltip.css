@@ -1,0 +1,32 @@
+.chips-tooltip {
+  position: relative;
+  display: inline-flex;
+  max-width: var(--chips-tooltip-max-width, 240px);
+  padding: var(--chips-tooltip-padding, var(--chips-space-2) var(--chips-space-3));
+  border-radius: var(--chips-tooltip-border-radius, var(--chips-radius-sm));
+  background: var(--chips-tooltip-bg, rgba(15, 23, 42, 0.92));
+  color: var(--chips-tooltip-text, #fff);
+  font-size: var(--chips-tooltip-font-size, var(--chips-font-size-xs));
+  box-shadow: var(--chips-tooltip-shadow, var(--chips-shadow-md));
+}
+
+.chips-tooltip::after {
+  content: '';
+  position: absolute;
+  width: var(--chips-tooltip-arrow-size, 8px);
+  height: var(--chips-tooltip-arrow-size, 8px);
+  background: inherit;
+  transform: rotate(45deg);
+}
+
+.chips-tooltip--top::after {
+  left: 50%;
+  bottom: calc(var(--chips-tooltip-arrow-size, 8px) * -0.5);
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.chips-tooltip--bottom::after {
+  left: 50%;
+  top: calc(var(--chips-tooltip-arrow-size, 8px) * -0.5);
+  transform: translateX(-50%) rotate(45deg);
+}

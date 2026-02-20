@@ -1,0 +1,42 @@
+.chips-tabs {
+  border-bottom: 1px solid var(--chips-tabs-border-color, var(--chips-color-border));
+}
+
+.chips-tabs__list {
+  display: flex;
+  gap: var(--chips-tabs-gap, var(--chips-space-1));
+}
+
+.chips-tabs__tab {
+  position: relative;
+  padding: var(--chips-tab-padding-y, var(--chips-space-2)) var(--chips-tab-padding-x, var(--chips-space-3));
+  border-radius: var(--chips-tab-border-radius, var(--chips-radius-sm));
+  color: var(--chips-tab-color, var(--chips-palette-neutral-600));
+  background: var(--chips-tab-bg, transparent);
+  border: none;
+  font-size: var(--chips-tab-font-size, var(--chips-font-size-sm));
+  font-weight: var(--chips-tab-font-weight, var(--chips-font-weight-medium));
+  transition: all var(--chips-motion-duration-fast) var(--chips-motion-easing-default);
+}
+
+.chips-tabs__tab:hover {
+  background: var(--chips-tab-bg-hover, var(--chips-palette-neutral-100));
+}
+
+.chips-tabs__tab[aria-selected="true"] {
+  color: var(--chips-tab-color-active, var(--chips-color-primary));
+  background: var(--chips-tab-bg-active, rgba(59, 130, 246, 0.1));
+}
+
+.chips-tabs__indicator {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: var(--chips-tab-border-width, 2px);
+  background: var(--chips-tab-border-color-active, var(--chips-color-primary));
+}
+
+.chips-tab-panel {
+  padding: var(--chips-tab-panel-padding, var(--chips-space-4));
+}

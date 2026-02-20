@@ -1,0 +1,45 @@
+/* ChipsTextarea 样式 */
+.chips-textarea {
+  display: block;
+  width: 100%;
+  min-height: 80px;
+  padding: var(--chips-textarea-padding, var(--chips-space-3));
+  font-family: var(--chips-font-family-base);
+  font-size: var(--chips-textarea-font-size, var(--chips-font-size-md));
+  line-height: var(--chips-textarea-line-height, var(--chips-font-lineHeight-normal));
+  color: var(--chips-textarea-text, var(--chips-color-text));
+  background: var(--chips-textarea-bg, #ffffff);
+  border: 1px solid var(--chips-textarea-border-color, var(--chips-color-border));
+  border-radius: var(--chips-textarea-border-radius, var(--chips-radius-md));
+  resize: var(--chips-textarea-resize, vertical);
+  outline: none;
+  transition: all var(--chips-motion-duration-fast) var(--chips-motion-easing-default);
+}
+
+.chips-textarea::placeholder {
+  color: var(--chips-textarea-placeholder, var(--chips-palette-neutral-400));
+}
+
+.chips-textarea:hover {
+  border-color: var(--chips-palette-neutral-400);
+}
+
+.chips-textarea:focus {
+  border-color: var(--chips-textarea-border-color-focus, var(--chips-color-primary));
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.chips-textarea--error {
+  border-color: var(--chips-textarea-border-color-error, var(--chips-color-error));
+}
+
+.chips-textarea--error:focus {
+  border-color: var(--chips-textarea-border-color-error, var(--chips-color-error));
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.12);
+}
+
+.chips-textarea:disabled {
+  background: var(--chips-palette-neutral-100);
+  color: var(--chips-palette-neutral-400);
+  cursor: not-allowed;
+}

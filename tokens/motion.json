@@ -1,0 +1,17 @@
+{
+  "chips": {
+    "motion": {
+      "easing": {
+        "default": { "value": "cubic-bezier(0.4, 0, 0.2, 1)", "type": "cubicBezier" },
+        "in": { "value": "cubic-bezier(0.4, 0, 1, 1)", "type": "cubicBezier" },
+        "out": { "value": "cubic-bezier(0, 0, 0.2, 1)", "type": "cubicBezier" },
+        "in-out": { "value": "cubic-bezier(0.4, 0, 0.6, 1)", "type": "cubicBezier" }
+      },
+      "duration": {
+        "fast": { "value": "150ms", "type": "duration" },
+        "normal": { "value": "250ms", "type": "duration" },
+        "slow": { "value": "400ms", "type": "duration" }
+      }
+    }
+  }
+}

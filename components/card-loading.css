@@ -1,0 +1,27 @@
+.chips-card-loading {
+  display: grid;
+  gap: var(--chips-space-3);
+  place-items: center;
+  min-height: 160px;
+  background: var(--chips-card-loading-bg, var(--chips-palette-neutral-50));
+  color: var(--chips-card-loading-text-color, var(--chips-color-text-secondary));
+}
+
+.chips-card-loading__spinner {
+  width: var(--chips-card-loading-spinner-size, 28px);
+  height: var(--chips-card-loading-spinner-size, 28px);
+  border: var(--chips-card-loading-spinner-width, 3px) solid rgba(59, 130, 246, 0.25);
+  border-top-color: var(--chips-card-loading-spinner-color, var(--chips-color-primary));
+  border-radius: 999px;
+  animation: chips-card-loading-spin 0.8s linear infinite;
+}
+
+.chips-card-loading__label {
+  font-size: var(--chips-card-loading-text-font-size, var(--chips-font-size-sm));
+}
+
+@keyframes chips-card-loading-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

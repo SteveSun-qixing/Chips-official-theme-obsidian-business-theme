@@ -1,0 +1,33 @@
+.chips-toast {
+  min-width: var(--chips-toast-min-width, 280px);
+  max-width: var(--chips-toast-max-width, 420px);
+  padding: var(--chips-toast-padding, var(--chips-space-3) var(--chips-space-4));
+  border-radius: var(--chips-toast-border-radius, var(--chips-radius-md));
+  border: 1px solid transparent;
+  box-shadow: var(--chips-toast-shadow, var(--chips-shadow-lg));
+  font-size: var(--chips-toast-font-size, var(--chips-font-size-sm));
+}
+
+.chips-toast--info {
+  background: var(--chips-toast-info-bg, #eff6ff);
+  color: var(--chips-toast-info-text, #1e3a8a);
+  border-color: var(--chips-toast-info-border, #bfdbfe);
+}
+
+.chips-toast--success {
+  background: var(--chips-toast-success-bg, #ecfdf5);
+  color: var(--chips-toast-success-text, #065f46);
+  border-color: var(--chips-toast-success-border, #a7f3d0);
+}
+
+.chips-toast--warning {
+  background: var(--chips-toast-warning-bg, #fffbeb);
+  color: var(--chips-toast-warning-text, #92400e);
+  border-color: var(--chips-toast-warning-border, #fde68a);
+}
+
+.chips-toast--error {
+  background: var(--chips-toast-error-bg, #fef2f2);
+  color: var(--chips-toast-error-text, #991b1b);
+  border-color: var(--chips-toast-error-border, #fecaca);
+}

@@ -1,0 +1,66 @@
+.chips-select {
+  position: relative;
+  width: 100%;
+}
+
+.chips-select__trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: var(--chips-select-height, 40px);
+  padding: 0 var(--chips-select-padding-x, var(--chips-space-3));
+  border: 1px solid var(--chips-select-border-color, var(--chips-color-border));
+  border-radius: var(--chips-select-border-radius, var(--chips-radius-md));
+  background: var(--chips-select-bg, #fff);
+  color: var(--chips-select-text, var(--chips-color-text));
+  transition: all var(--chips-motion-duration-fast) var(--chips-motion-easing-default);
+}
+
+.chips-select__value--placeholder {
+  color: var(--chips-select-placeholder, var(--chips-palette-neutral-400));
+}
+
+.chips-select__icon {
+  color: var(--chips-select-arrow-color, var(--chips-palette-neutral-500));
+}
+
+.chips-select[data-open="true"] .chips-select__trigger,
+.chips-select__trigger:focus-visible {
+  border-color: var(--chips-select-border-color-focus, var(--chips-color-primary));
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12);
+  outline: none;
+}
+
+.chips-select__panel {
+  position: absolute;
+  z-index: var(--chips-z-index-dropdown, 1000);
+  left: 0;
+  right: 0;
+  margin-top: var(--chips-space-1);
+  border-radius: var(--chips-select-dropdown-border-radius, var(--chips-radius-md));
+  border: 1px solid var(--chips-color-border);
+  background: var(--chips-select-dropdown-bg, #fff);
+  box-shadow: var(--chips-select-dropdown-shadow, var(--chips-shadow-lg));
+  max-height: 240px;
+  overflow: auto;
+}
+
+.chips-select__option {
+  padding: var(--chips-select-option-padding, var(--chips-space-2) var(--chips-space-3));
+  transition: background var(--chips-motion-duration-fast) var(--chips-motion-easing-default);
+}
+
+.chips-select__option:hover {
+  background: var(--chips-select-option-bg-hover, var(--chips-palette-neutral-100));
+}
+
+.chips-select__option[data-selected="true"] {
+  background: var(--chips-select-option-bg-selected, rgba(59, 130, 246, 0.12));
+}
+
+.chips-select--disabled,
+.chips-select[aria-disabled="true"] {
+  opacity: 0.55;
+  pointer-events: none;
+}

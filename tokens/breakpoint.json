@@ -1,0 +1,11 @@
+{
+  "chips": {
+    "breakpoint": {
+      "sm": { "value": "640px", "type": "other" },
+      "md": { "value": "768px", "type": "other" },
+      "lg": { "value": "1024px", "type": "other" },
+      "xl": { "value": "1280px", "type": "other" },
+      "2xl": { "value": "1536px", "type": "other" }
+    }
+  }
+}

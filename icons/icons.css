@@ -1,0 +1,43 @@
+/* 图标 CSS 变量映射 */
+:root {
+  /* 常用图标 - 使用 Lucide Icons */
+  --chips-icon-close: url('svg/x.svg');
+  --chips-icon-check: url('svg/check.svg');
+  --chips-icon-chevron-down: url('svg/chevron-down.svg');
+  --chips-icon-chevron-up: url('svg/chevron-up.svg');
+  --chips-icon-chevron-left: url('svg/chevron-left.svg');
+  --chips-icon-chevron-right: url('svg/chevron-right.svg');
+  --chips-icon-arrow-left: url('svg/arrow-left.svg');
+  --chips-icon-arrow-right: url('svg/arrow-right.svg');
+  --chips-icon-plus: url('svg/plus.svg');
+  --chips-icon-minus: url('svg/minus.svg');
+  --chips-icon-search: url('svg/search.svg');
+  --chips-icon-settings: url('svg/settings.svg');
+  --chips-icon-user: url('svg/user.svg');
+  --chips-icon-file: url('svg/file.svg');
+  --chips-icon-folder: url('svg/folder.svg');
+  --chips-icon-folder-open: url('svg/folder-open.svg');
+  --chips-icon-home: url('svg/home.svg');
+  --chips-icon-trash: url('svg/trash.svg');
+  --chips-icon-edit: url('svg/edit.svg');
+  --chips-icon-save: url('svg/save.svg');
+  --chips-icon-download: url('svg/download.svg');
+  --chips-icon-upload: url('svg/upload.svg');
+  --chips-icon-info: url('svg/info.svg');
+  --chips-icon-alert: url('svg/alert-circle.svg');
+  --chips-icon-success: url('svg/check-circle.svg');
+  --chips-icon-error: url('svg/x-circle.svg');
+  --chips-icon-warning: url('svg/alert-triangle.svg');
+  --chips-icon-menu: url('svg/menu.svg');
+  --chips-icon-more: url('svg/more-horizontal.svg');
+  --chips-icon-external: url('svg/external-link.svg');
+}
+
+/* 图标通用样式 */
+.chips-icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: middle;
+  fill: currentColor;
+}

@@ -1,0 +1,11 @@
+{
+  "chips": {
+    "shadow": {
+      "sm": { "value": "0 2px 6px rgba(1, 6, 15, 0.35)", "type": "boxShadow" },
+      "md": { "value": "0 10px 24px rgba(1, 8, 18, 0.45)", "type": "boxShadow" },
+      "lg": { "value": "0 16px 36px rgba(1, 10, 24, 0.52)", "type": "boxShadow" },
+      "xl": { "value": "0 24px 56px rgba(1, 12, 28, 0.62)", "type": "boxShadow" },
+      "none": { "value": "none", "type": "boxShadow" }
+    }
+  }
+}

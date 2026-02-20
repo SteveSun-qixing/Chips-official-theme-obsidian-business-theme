@@ -1,0 +1,22 @@
+.chips-card-wrapper {
+  border: var(--chips-card-wrapper-border-width, 1px) solid var(--chips-card-wrapper-border-color, var(--chips-color-border));
+  border-radius: var(--chips-card-wrapper-border-radius, var(--chips-radius-lg));
+  background: var(--chips-card-wrapper-bg, #fff);
+  box-shadow: var(--chips-card-wrapper-shadow, var(--chips-shadow-sm));
+  overflow: hidden;
+}
+
+.chips-card-wrapper__header,
+.chips-card-wrapper__footer {
+  padding: var(--chips-card-wrapper-padding, var(--chips-space-3) var(--chips-space-4));
+  border-bottom: 1px solid var(--chips-color-border);
+}
+
+.chips-card-wrapper__footer {
+  border-bottom: none;
+  border-top: 1px solid var(--chips-color-border);
+}
+
+.chips-card-wrapper__body {
+  padding: var(--chips-card-wrapper-padding, var(--chips-space-4));
+}

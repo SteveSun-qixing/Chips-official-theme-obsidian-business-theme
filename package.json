@@ -1,0 +1,32 @@
+{
+  "name": "@chips/theme-obsidian-business",
+  "version": "1.0.0",
+  "description": "Obsidian Business Night Theme for Chips ecosystem",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.js",
+    "build:tokens": "npx style-dictionary build",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "validate": "node scripts/validate.js"
+  },
+  "keywords": [
+    "chips",
+    "theme",
+    "obsidian",
+    "night",
+    "business",
+    "style-dictionary"
+  ],
+  "author": "Chips Official",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@vitest/coverage-v8": "^1.2.0",
+    "glob": "^10.3.10",
+    "style-dictionary": "^4.0.0",
+    "typescript": "^5.3.3",
+    "vitest": "^1.2.0"
+  }
+}

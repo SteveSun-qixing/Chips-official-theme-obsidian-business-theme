@@ -1,0 +1,12 @@
+{
+  "chips": {
+    "z": {
+      "base": { "value": "0", "type": "other" },
+      "dropdown": { "value": "1000", "type": "other" },
+      "sticky": { "value": "1100", "type": "other" },
+      "modal": { "value": "1200", "type": "other" },
+      "tooltip": { "value": "1300", "type": "other" },
+      "toast": { "value": "1400", "type": "other" }
+    }
+  }
+}

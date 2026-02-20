@@ -1,0 +1,44 @@
+/* ChipsInput 样式 */
+.chips-input {
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+  height: var(--chips-input-height, 40px);
+  padding: var(--chips-input-padding-y, 0) var(--chips-input-padding-x, var(--chips-space-3));
+  font-family: var(--chips-font-family-base);
+  font-size: var(--chips-input-font-size, var(--chips-font-size-md));
+  color: var(--chips-input-text, var(--chips-color-text));
+  background: var(--chips-input-bg, #ffffff);
+  border: var(--chips-input-border-width, 1px) solid var(--chips-input-border-color, var(--chips-color-border));
+  border-radius: var(--chips-input-border-radius, var(--chips-radius-md));
+  outline: none;
+  transition: all var(--chips-motion-duration-fast) var(--chips-motion-easing-default);
+}
+
+.chips-input::placeholder {
+  color: var(--chips-input-placeholder, var(--chips-palette-neutral-400));
+}
+
+.chips-input:hover {
+  border-color: var(--chips-palette-neutral-400);
+}
+
+.chips-input:focus {
+  border-color: var(--chips-input-border-color-focus, var(--chips-color-primary));
+  box-shadow: var(--chips-input-shadow-focus, 0 0 0 3px rgba(59, 130, 246, 0.1));
+}
+
+.chips-input:disabled {
+  background: var(--chips-input-bg-disabled, var(--chips-palette-neutral-100));
+  color: var(--chips-palette-neutral-400);
+  cursor: not-allowed;
+}
+
+.chips-input--error {
+  border-color: var(--chips-input-border-color-error, var(--chips-color-error));
+}
+
+.chips-input--error:focus {
+  border-color: var(--chips-input-border-color-error, var(--chips-color-error));
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}

@@ -1,0 +1,26 @@
+.chips-card-error {
+  display: grid;
+  gap: var(--chips-space-2);
+  align-content: center;
+  justify-items: center;
+  min-height: 160px;
+  padding: var(--chips-card-error-padding, var(--chips-space-5));
+  border-radius: var(--chips-radius-md);
+  background: var(--chips-card-error-bg, #fef2f2);
+}
+
+.chips-card-error__icon {
+  font-size: var(--chips-card-error-icon-size, 24px);
+  color: var(--chips-card-error-icon-color, var(--chips-color-error));
+}
+
+.chips-card-error__message {
+  font-size: var(--chips-card-error-message-font-size, var(--chips-font-size-sm));
+  color: var(--chips-card-error-message-color, #991b1b);
+  text-align: center;
+}
+
+.chips-card-error__code {
+  font-size: var(--chips-card-error-code-font-size, var(--chips-font-size-xs));
+  color: var(--chips-card-error-code-color, #b91c1c);
+}
