@@ -8,6 +8,20 @@ const __dirname = path.dirname(__filename);
 console.log('Validating Chips Obsidian Business Theme...\n');
 
 let hasErrors = false;
+const contractPath = path.join(__dirname, '..', 'contracts', 'theme-interface.contract.json');
+let themeContract = null;
+
+if (!fs.existsSync(contractPath)) {
+  console.error('✗ contracts/theme-interface.contract.json not found');
+  hasErrors = true;
+} else {
+  try {
+    themeContract = JSON.parse(fs.readFileSync(contractPath, 'utf-8'));
+  } catch (error) {
+    console.error(`✗ failed to parse theme interface contract: ${error instanceof Error ? error.message : error}`);
+    hasErrors = true;
+  }
+}
 
 // 1. 验证 manifest.yaml
 console.log('1. Checking manifest.yaml...');
@@ -71,14 +85,9 @@ requiredTokens.forEach(token => {
 
 // 3. 验证组件样式文件
 console.log('\n3. Checking component styles...');
-const requiredComponents = [
-  'button.css', 'input.css', 'textarea.css', 'checkbox.css', 'switch.css',
-  'radio.css', 'select.css', 'dialog.css', 'tabs.css', 'dropdown.css',
-  'tooltip.css', 'slider.css', 'accordion.css', 'toast.css',
-  'card-wrapper.css', 'card-loading.css', 'card-error.css',
-  'iframe-host.css', 'cover-frame.css', 'dock.css', 'tool-window.css',
-  'file-tree.css', 'tag-input.css', 'zoom-slider.css'
-];
+const requiredComponents = Array.isArray(themeContract?.components)
+  ? themeContract.components.map((component) => component.file)
+  : [];
 
 const componentsDir = path.join(__dirname, '..', 'components');
 requiredComponents.forEach(component => {
@@ -120,7 +129,7 @@ console.log('\n6. Checking test files...');
 const requiredTests = [
   'tokens.test.ts', 'components.test.ts', 'build.test.ts',
   'variables.test.ts', 'dark-mode.test.ts', 'icons.test.ts',
-  'animations.test.ts', 'coverage.test.ts'
+  'animations.test.ts', 'coverage.test.ts', 'component-library-sync.test.ts'
 ];
 
 const testsDir = path.join(__dirname, '..', 'tests');
@@ -144,11 +153,7 @@ if (!fs.existsSync(themeCssPath)) {
   console.log('✓ theme.css');
 }
 
-const contractPath = path.join(__dirname, '..', 'contracts', 'theme-interface.contract.json');
-if (!fs.existsSync(contractPath)) {
-  console.error('✗ contracts/theme-interface.contract.json not found');
-  hasErrors = true;
-} else {
+if (themeContract) {
   console.log('✓ contracts/theme-interface.contract.json');
 }
 

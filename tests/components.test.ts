@@ -12,8 +12,8 @@ describe('Component Styles', () => {
   const contract = readThemeContract();
   const requiredComponents = contract.components.map((component) => component.file);
 
-  it('should have all 24 required component style files', () => {
-    expect(requiredComponents.length).toBe(24);
+  it('should have all required component style files declared in the active contract', () => {
+    expect(requiredComponents.length).toBe(13);
 
     requiredComponents.forEach(file => {
       const filePath = path.join(componentsDir, file);

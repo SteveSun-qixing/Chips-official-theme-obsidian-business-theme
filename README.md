@@ -5,7 +5,7 @@
 ## 特性
 
 - Obsidian 深色基底与蓝金商务点缀
-- 覆盖 24 个无头组件接口点
+- 覆盖当前组件库 13 个无头组件接口点（class + data-part + data-scope）
 - 主题契约驱动测试（接口命中、变量引用、占位清理）
 - Style Dictionary Token 构建链路
 - 可直接通过 `chipsd validate` 与 `chipsd pack`

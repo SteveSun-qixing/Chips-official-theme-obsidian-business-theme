@@ -1,0 +1,15 @@
+.chips-form,
+[data-scope="form"][data-part="root"] {
+  display: grid;
+  gap: var(--chips-form-gap, var(--chips-space-4));
+  padding: var(--chips-form-padding, var(--chips-space-4));
+  border-radius: var(--chips-form-radius, var(--chips-radius-lg));
+  border: var(--chips-form-border-width, 1px) solid var(--chips-form-border-color, var(--chips-color-border));
+  background: var(--chips-form-bg, var(--chips-color-surface));
+  color: var(--chips-form-text, var(--chips-color-text));
+}
+
+.chips-form :where(button, input, textarea, select),
+[data-scope="form"][data-part="root"] :where(button, input, textarea, select) {
+  font-family: var(--chips-font-family-base);
+}
