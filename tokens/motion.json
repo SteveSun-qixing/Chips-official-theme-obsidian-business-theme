@@ -2,15 +2,15 @@
   "chips": {
     "motion": {
       "easing": {
-        "default": { "value": "cubic-bezier(0.22, 1, 0.36, 1)", "type": "cubicBezier" },
-        "in": { "value": "cubic-bezier(0.32, 0, 0.67, 0)", "type": "cubicBezier" },
-        "out": { "value": "cubic-bezier(0.33, 1, 0.68, 1)", "type": "cubicBezier" },
-        "in-out": { "value": "cubic-bezier(0.65, 0, 0.35, 1)", "type": "cubicBezier" }
+        "default": { "value": "cubic-bezier(0.16, 1, 0.3, 1)", "type": "cubicBezier" },
+        "in": { "value": "cubic-bezier(0.4, 0, 1, 1)", "type": "cubicBezier" },
+        "out": { "value": "cubic-bezier(0, 0, 0.2, 1)", "type": "cubicBezier" },
+        "in-out": { "value": "cubic-bezier(0.4, 0, 0.2, 1)", "type": "cubicBezier" }
       },
       "duration": {
-        "fast": { "value": "180ms", "type": "duration" },
-        "normal": { "value": "280ms", "type": "duration" },
-        "slow": { "value": "460ms", "type": "duration" }
+        "fast": { "value": "140ms", "type": "duration" },
+        "normal": { "value": "220ms", "type": "duration" },
+        "slow": { "value": "320ms", "type": "duration" }
       }
     }
   }

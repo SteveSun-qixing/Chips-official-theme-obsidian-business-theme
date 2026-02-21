@@ -15,7 +15,6 @@
   font-weight: var(--chips-button-font-weight, var(--chips-font-weight-medium));
   letter-spacing: var(--chips-button-letter-spacing, 0.01em);
   box-shadow: var(--chips-button-shadow, var(--chips-shadow-sm));
-  backdrop-filter: saturate(138%) blur(var(--chips-control-blur, 0px));
   cursor: pointer;
   transition:
     background var(--chips-motion-duration-fast) var(--chips-motion-easing-default),
@@ -30,7 +29,7 @@
   background: var(--chips-button-bg-hover, var(--chips-color-primary-hover));
   border-color: var(--chips-button-border-color-hover, var(--chips-color-primary-hover));
   box-shadow: var(--chips-button-shadow-hover, var(--chips-shadow-md));
-  transform: translateY(var(--chips-button-hover-offset, -1px));
+  transform: translateY(var(--chips-button-hover-offset, 0));
 }
 
 .chips-button:active,
