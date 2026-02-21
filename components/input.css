@@ -16,13 +16,18 @@
 .chips-input [data-part="control"],
 [data-scope="input"] [data-part="control"] {
   width: 100%;
-  min-height: var(--chips-input-height, 40px);
+  min-height: var(--chips-input-height, 42px);
   padding: 0 var(--chips-input-padding-x, var(--chips-space-3));
   border-radius: var(--chips-input-border-radius, var(--chips-radius-md));
   border: var(--chips-input-border-width, 1px) solid var(--chips-input-border-color, var(--chips-color-border));
   background: var(--chips-input-bg, #ffffff);
   color: var(--chips-input-text, var(--chips-color-text));
-  transition: all var(--chips-motion-duration-fast) var(--chips-motion-easing-default);
+  box-shadow: var(--chips-input-shadow, none);
+  backdrop-filter: saturate(132%) blur(var(--chips-control-blur, 0px));
+  transition:
+    background var(--chips-motion-duration-fast) var(--chips-motion-easing-default),
+    border-color var(--chips-motion-duration-fast) var(--chips-motion-easing-default),
+    box-shadow var(--chips-motion-duration-fast) var(--chips-motion-easing-default);
 }
 
 .chips-input [data-part="control"]::placeholder,
@@ -41,6 +46,7 @@
 [data-scope="input"] [data-part="control"]:disabled {
   background: var(--chips-input-bg-disabled, var(--chips-palette-neutral-100));
   color: var(--chips-input-text-disabled, var(--chips-palette-neutral-400));
+  border-color: var(--chips-input-border-color-disabled, var(--chips-input-border-color, var(--chips-color-border)));
   cursor: not-allowed;
 }
 

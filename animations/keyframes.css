@@ -1,6 +1,3 @@
-/* 关键帧动画 */
-
-/* 旋转动画 */
 @keyframes chips-spin {
   from {
     transform: rotate(0deg);
@@ -10,27 +7,26 @@
   }
 }
 
-/* 脉冲动画 */
 @keyframes chips-pulse {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 1;
   }
   50% {
-    opacity: 0.5;
+    opacity: 0.62;
   }
 }
 
-/* 弹跳动画 */
 @keyframes chips-bounce {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-10px);
+    transform: translateY(-6px);
   }
 }
 
-/* 淡入动画 */
 @keyframes chips-fade-in {
   from {
     opacity: 0;
@@ -40,7 +36,6 @@
   }
 }
 
-/* 淡出动画 */
 @keyframes chips-fade-out {
   from {
     opacity: 1;
@@ -50,84 +45,95 @@
   }
 }
 
-/* 滑入动画 */
 @keyframes chips-slide-in-up {
   from {
-    transform: translateY(100%);
+    transform: translateY(18px);
+    opacity: 0;
   }
   to {
     transform: translateY(0);
+    opacity: 1;
   }
 }
 
 @keyframes chips-slide-in-down {
   from {
-    transform: translateY(-100%);
+    transform: translateY(-18px);
+    opacity: 0;
   }
   to {
     transform: translateY(0);
+    opacity: 1;
   }
 }
 
 @keyframes chips-slide-in-left {
   from {
-    transform: translateX(-100%);
+    transform: translateX(-18px);
+    opacity: 0;
   }
   to {
     transform: translateX(0);
+    opacity: 1;
   }
 }
 
 @keyframes chips-slide-in-right {
   from {
-    transform: translateX(100%);
+    transform: translateX(18px);
+    opacity: 0;
   }
   to {
     transform: translateX(0);
+    opacity: 1;
   }
 }
 
-/* 缩放动画 */
 @keyframes chips-scale-in {
   from {
-    transform: scale(0);
+    transform: scale(0.96);
+    opacity: 0;
   }
   to {
     transform: scale(1);
+    opacity: 1;
   }
 }
 
 @keyframes chips-scale-out {
   from {
     transform: scale(1);
+    opacity: 1;
   }
   to {
-    transform: scale(0);
+    transform: scale(0.96);
+    opacity: 0;
   }
 }
 
-/* 摇晃动画 */
 @keyframes chips-shake {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateX(0);
   }
-  10%, 30%, 50%, 70%, 90% {
-    transform: translateX(-5px);
+  20%,
+  60% {
+    transform: translateX(-3px);
   }
-  20%, 40%, 60%, 80% {
-    transform: translateX(5px);
+  40%,
+  80% {
+    transform: translateX(3px);
   }
 }
 
-/* 工具类 */
 .chips-animate-spin {
   animation: chips-spin 1s linear infinite;
 }
 
 .chips-animate-pulse {
-  animation: chips-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  animation: chips-pulse 2s var(--chips-motion-easing-in-out, ease-in-out) infinite;
 }
 
 .chips-animate-bounce {
-  animation: chips-bounce 1s infinite;
+  animation: chips-bounce 1s var(--chips-motion-easing-default, ease) infinite;
 }
