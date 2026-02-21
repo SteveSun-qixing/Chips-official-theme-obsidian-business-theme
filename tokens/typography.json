@@ -3,11 +3,11 @@
     "font": {
       "family": {
         "base": {
-          "value": "'IBM Plex Sans', 'PingFang SC', 'Noto Sans SC', 'Segoe UI', sans-serif",
+          "value": "'SF Pro Text', 'SF Pro Display', -apple-system, 'PingFang SC', 'Helvetica Neue', sans-serif",
           "type": "fontFamily"
         },
         "mono": {
-          "value": "'JetBrains Mono', 'Cascadia Code', 'SF Mono', monospace",
+          "value": "'SF Mono', 'JetBrains Mono', 'Cascadia Code', monospace",
           "type": "fontFamily"
         }
       },
@@ -27,9 +27,9 @@
         "bold": { "value": "700", "type": "fontWeight" }
       },
       "lineHeight": {
-        "tight": { "value": "1.25", "type": "lineHeight" },
+        "tight": { "value": "1.3", "type": "lineHeight" },
         "normal": { "value": "1.5", "type": "lineHeight" },
-        "loose": { "value": "1.75", "type": "lineHeight" }
+        "loose": { "value": "1.72", "type": "lineHeight" }
       }
     }
   }

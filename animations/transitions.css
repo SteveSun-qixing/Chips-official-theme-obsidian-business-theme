@@ -1,24 +1,15 @@
-/* 通用过渡效果 */
 .chips-transition-fade {
   transition: opacity var(--chips-motion-duration-normal) var(--chips-motion-easing-default);
 }
 
-.chips-transition-slide-up {
-  transition: transform var(--chips-motion-duration-normal) var(--chips-motion-easing-default),
-              opacity var(--chips-motion-duration-normal) var(--chips-motion-easing-default);
-}
-
-.chips-transition-slide-down {
-  transition: transform var(--chips-motion-duration-normal) var(--chips-motion-easing-default),
-              opacity var(--chips-motion-duration-normal) var(--chips-motion-easing-default);
-}
-
+.chips-transition-slide-up,
+.chips-transition-slide-down,
 .chips-transition-scale {
-  transition: transform var(--chips-motion-duration-normal) var(--chips-motion-easing-default),
-              opacity var(--chips-motion-duration-normal) var(--chips-motion-easing-default);
+  transition:
+    transform var(--chips-motion-duration-normal) var(--chips-motion-easing-default),
+    opacity var(--chips-motion-duration-normal) var(--chips-motion-easing-default);
 }
 
-/* 进入/离开状态 */
 .chips-enter-from,
 .chips-leave-to {
   opacity: 0;
@@ -30,7 +21,7 @@
 }
 
 .chips-slide-up-enter-from {
-  transform: translateY(10px);
+  transform: translateY(12px);
   opacity: 0;
 }
 
@@ -40,7 +31,7 @@
 }
 
 .chips-slide-down-enter-from {
-  transform: translateY(-10px);
+  transform: translateY(-12px);
   opacity: 0;
 }
 
@@ -50,7 +41,7 @@
 }
 
 .chips-scale-enter-from {
-  transform: scale(0.95);
+  transform: scale(0.96);
   opacity: 0;
 }
 

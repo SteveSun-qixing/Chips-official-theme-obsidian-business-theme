@@ -7,6 +7,8 @@
   border: var(--chips-form-border-width, 1px) solid var(--chips-form-border-color, var(--chips-color-border));
   background: var(--chips-form-bg, var(--chips-color-surface));
   color: var(--chips-form-text, var(--chips-color-text));
+  box-shadow: var(--chips-form-shadow, var(--chips-shadow-sm));
+  backdrop-filter: saturate(130%) blur(var(--chips-control-blur, 0px));
 }
 
 .chips-form :where(button, input, textarea, select),

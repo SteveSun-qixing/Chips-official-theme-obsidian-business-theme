@@ -16,14 +16,20 @@
 .chips-textarea,
 [data-scope="textarea"] [data-part="control"] {
   width: 100%;
-  min-height: var(--chips-textarea-min-height, 96px);
+  min-height: var(--chips-textarea-min-height, 108px);
   padding: var(--chips-textarea-padding, var(--chips-space-3));
   border-radius: var(--chips-textarea-border-radius, var(--chips-radius-md));
   border: var(--chips-textarea-border-width, 1px) solid var(--chips-textarea-border-color, var(--chips-color-border));
   background: var(--chips-textarea-bg, #ffffff);
   color: var(--chips-textarea-text, var(--chips-color-text));
+  box-shadow: var(--chips-textarea-shadow, none);
+  line-height: var(--chips-textarea-line-height, var(--chips-font-line-height-normal));
+  backdrop-filter: saturate(132%) blur(var(--chips-control-blur, 0px));
   resize: var(--chips-textarea-resize, vertical);
-  transition: all var(--chips-motion-duration-fast) var(--chips-motion-easing-default);
+  transition:
+    background var(--chips-motion-duration-fast) var(--chips-motion-easing-default),
+    border-color var(--chips-motion-duration-fast) var(--chips-motion-easing-default),
+    box-shadow var(--chips-motion-duration-fast) var(--chips-motion-easing-default);
 }
 
 .chips-textarea::placeholder,

@@ -14,16 +14,21 @@
 .chips-select__trigger,
 [data-scope="select"] [data-part="trigger"] {
   width: 100%;
-  min-height: var(--chips-select-height, 40px);
+  min-height: var(--chips-select-height, 42px);
   padding: 0 var(--chips-select-padding-x, var(--chips-space-3));
   border-radius: var(--chips-select-border-radius, var(--chips-radius-md));
   border: var(--chips-select-border-width, 1px) solid var(--chips-select-border-color, var(--chips-color-border));
   background: var(--chips-select-bg, #ffffff);
   color: var(--chips-select-text, var(--chips-color-text));
+  box-shadow: var(--chips-select-shadow, inset 0 1px 0 rgba(255, 255, 255, 0.04));
+  backdrop-filter: saturate(132%) blur(var(--chips-control-blur, 0px));
   display: flex;
   align-items: center;
   justify-content: space-between;
-  transition: all var(--chips-motion-duration-fast) var(--chips-motion-easing-default);
+  transition:
+    background var(--chips-motion-duration-fast) var(--chips-motion-easing-default),
+    border-color var(--chips-motion-duration-fast) var(--chips-motion-easing-default),
+    box-shadow var(--chips-motion-duration-fast) var(--chips-motion-easing-default);
 }
 
 .chips-select__trigger:focus-visible,
@@ -40,7 +45,8 @@
   border: 1px solid var(--chips-select-panel-border-color, var(--chips-color-border));
   background: var(--chips-select-dropdown-bg, #ffffff);
   box-shadow: var(--chips-select-dropdown-shadow, var(--chips-shadow-lg));
-  max-height: var(--chips-select-panel-max-height, 240px);
+  backdrop-filter: saturate(138%) blur(var(--chips-control-blur, 0px));
+  max-height: var(--chips-select-panel-max-height, 260px);
   overflow: auto;
 }
 
@@ -48,6 +54,7 @@
 [data-scope="select"] [data-part="item"] {
   padding: var(--chips-select-option-padding, var(--chips-space-2) var(--chips-space-3));
   color: var(--chips-select-option-color, var(--chips-color-text));
+  border-radius: var(--chips-select-option-radius, var(--chips-radius-sm));
   transition: background var(--chips-motion-duration-fast) var(--chips-motion-easing-default);
 }
 

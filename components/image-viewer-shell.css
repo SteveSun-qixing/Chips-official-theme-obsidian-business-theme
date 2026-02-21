@@ -20,6 +20,7 @@
   justify-content: center;
   border-radius: var(--chips-image-viewer-stage-radius, var(--chips-radius-lg));
   border: 1px solid var(--chips-image-viewer-stage-border-color, var(--chips-color-border));
+  background: var(--chips-image-viewer-stage-bg, rgba(13, 20, 31, 0.78));
   box-shadow: var(--chips-image-viewer-stage-shadow, var(--chips-shadow-xl));
   overflow: hidden;
 }
@@ -47,6 +48,6 @@
 
 .chips-image-viewer-shell-close:focus-visible,
 [data-scope="image-viewer-shell"][data-part="close"]:focus-visible {
-  outline: var(--chips-focus-ring-width, 2px) solid var(--chips-color-focus-ring, var(--chips-color-primary));
-  outline-offset: var(--chips-focus-ring-offset, 2px);
+  outline: none;
+  box-shadow: 0 0 0 var(--chips-focus-ring-width, 3px) var(--chips-color-focus-ring, var(--chips-color-primary));
 }
