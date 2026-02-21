@@ -1,45 +1,56 @@
-/* ChipsTextarea 样式 */
-.chips-textarea {
-  display: block;
+.chips-textarea-field,
+[data-scope="textarea"][data-part="root"] {
+  display: grid;
+  gap: var(--chips-textarea-gap, var(--chips-space-2));
   width: 100%;
-  min-height: 80px;
-  padding: var(--chips-textarea-padding, var(--chips-space-3));
-  font-family: var(--chips-font-family-base);
-  font-size: var(--chips-textarea-font-size, var(--chips-font-size-md));
-  line-height: var(--chips-textarea-line-height, var(--chips-font-lineHeight-normal));
   color: var(--chips-textarea-text, var(--chips-color-text));
-  background: var(--chips-textarea-bg, #ffffff);
-  border: 1px solid var(--chips-textarea-border-color, var(--chips-color-border));
+  font-family: var(--chips-font-family-base);
+}
+
+.chips-textarea-field [data-part="label"],
+[data-scope="textarea"] [data-part="label"] {
+  font-size: var(--chips-textarea-label-font-size, var(--chips-font-size-sm));
+  color: var(--chips-textarea-label-color, var(--chips-color-text-secondary));
+}
+
+.chips-textarea,
+[data-scope="textarea"] [data-part="control"] {
+  width: 100%;
+  min-height: var(--chips-textarea-min-height, 96px);
+  padding: var(--chips-textarea-padding, var(--chips-space-3));
   border-radius: var(--chips-textarea-border-radius, var(--chips-radius-md));
+  border: var(--chips-textarea-border-width, 1px) solid var(--chips-textarea-border-color, var(--chips-color-border));
+  background: var(--chips-textarea-bg, #ffffff);
+  color: var(--chips-textarea-text, var(--chips-color-text));
   resize: var(--chips-textarea-resize, vertical);
-  outline: none;
   transition: all var(--chips-motion-duration-fast) var(--chips-motion-easing-default);
 }
 
-.chips-textarea::placeholder {
+.chips-textarea::placeholder,
+[data-scope="textarea"] [data-part="control"]::placeholder {
   color: var(--chips-textarea-placeholder, var(--chips-palette-neutral-400));
 }
 
-.chips-textarea:hover {
-  border-color: var(--chips-palette-neutral-400);
+.chips-textarea:focus-visible,
+[data-scope="textarea"] [data-part="control"]:focus-visible {
+  outline: none;
+  border-color: var(--chips-textarea-border-color-focus, var(--chips-color-focus-ring));
+  box-shadow: var(--chips-textarea-shadow-focus, 0 0 0 3px rgba(59, 130, 246, 0.14));
 }
 
-.chips-textarea:focus {
-  border-color: var(--chips-textarea-border-color-focus, var(--chips-color-primary));
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
-}
-
-.chips-textarea--error {
+.chips-textarea--error,
+[data-scope="textarea"] [data-part="control"][aria-invalid="true"] {
   border-color: var(--chips-textarea-border-color-error, var(--chips-color-error));
 }
 
-.chips-textarea--error:focus {
-  border-color: var(--chips-textarea-border-color-error, var(--chips-color-error));
-  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.12);
+.chips-textarea-field [data-part="helper"],
+[data-scope="textarea"] [data-part="helper"] {
+  font-size: var(--chips-textarea-helper-font-size, var(--chips-font-size-xs));
+  color: var(--chips-textarea-helper-color, var(--chips-color-text-secondary));
 }
 
-.chips-textarea:disabled {
-  background: var(--chips-palette-neutral-100);
-  color: var(--chips-palette-neutral-400);
-  cursor: not-allowed;
+.chips-textarea-field [data-part="error"],
+[data-scope="textarea"] [data-part="error"] {
+  font-size: var(--chips-textarea-error-font-size, var(--chips-font-size-xs));
+  color: var(--chips-textarea-error-color, var(--chips-color-error));
 }

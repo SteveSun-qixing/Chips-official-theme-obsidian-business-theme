@@ -1,0 +1,52 @@
+.chips-image-viewer-shell,
+[data-scope="image-viewer-shell"][data-part="overlay"] {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--chips-image-viewer-overlay-bg, rgba(10, 15, 25, 0.36));
+  backdrop-filter: blur(var(--chips-image-viewer-overlay-blur, 18px)) saturate(var(--chips-image-viewer-overlay-saturate, 145%));
+  z-index: var(--chips-z-index-popover, 1200);
+}
+
+.chips-image-viewer-shell-stage,
+[data-scope="image-viewer-shell"][data-part="stage"] {
+  position: relative;
+  width: min(var(--chips-image-viewer-stage-width, 96vw), var(--chips-image-viewer-stage-max-width, 1600px));
+  height: var(--chips-image-viewer-stage-height, 92vh);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--chips-image-viewer-stage-radius, var(--chips-radius-lg));
+  border: 1px solid var(--chips-image-viewer-stage-border-color, var(--chips-color-border));
+  box-shadow: var(--chips-image-viewer-stage-shadow, var(--chips-shadow-xl));
+  overflow: hidden;
+}
+
+.chips-image-viewer-shell-image,
+[data-scope="image-viewer-shell"][data-part="image"] {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  user-select: none;
+}
+
+.chips-image-viewer-shell-close,
+[data-scope="image-viewer-shell"][data-part="close"] {
+  position: absolute;
+  top: var(--chips-image-viewer-close-top, var(--chips-space-5));
+  right: var(--chips-image-viewer-close-right, var(--chips-space-6));
+  width: var(--chips-image-viewer-close-size, 36px);
+  height: var(--chips-image-viewer-close-size, 36px);
+  border-radius: var(--chips-image-viewer-close-radius, var(--chips-radius-pill));
+  border: 1px solid var(--chips-image-viewer-close-border-color, var(--chips-color-border));
+  background: var(--chips-image-viewer-close-bg, rgba(22, 30, 42, 0.55));
+  color: var(--chips-image-viewer-close-color, #ffffff);
+}
+
+.chips-image-viewer-shell-close:focus-visible,
+[data-scope="image-viewer-shell"][data-part="close"]:focus-visible {
+  outline: var(--chips-focus-ring-width, 2px) solid var(--chips-color-focus-ring, var(--chips-color-primary));
+  outline-offset: var(--chips-focus-ring-offset, 2px);
+}

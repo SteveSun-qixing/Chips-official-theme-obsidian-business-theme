@@ -7,14 +7,22 @@ const __dirname = path.dirname(__filename);
 
 export interface ThemeComponentContract {
   name: string;
+  exportName: string;
+  sourceFile: string;
   file: string;
-  baseSelector: string;
+  interfacePoints: {
+    scope: string;
+    classSelectors: string[];
+    parts: string[];
+  };
   requiredSelectors: string[];
   minVariableRefs: number;
 }
 
 export interface ThemeInterfaceContract {
   version: string;
+  generatedAt: string;
+  description: string;
   placeholderMarkers: string[];
   components: ThemeComponentContract[];
 }

@@ -11,15 +11,17 @@ describe('Component Coverage', () => {
   const componentsDir = path.join(__dirname, '..', 'components');
   const contract = readThemeContract();
 
-  it('should cover all 24 components from the component library', () => {
-    expect(contract.components.length).toBe(24);
+  it('should cover all active components from the component-library interface contract', () => {
+    expect(contract.components.length).toBe(13);
 
     contract.components.forEach((component) => {
       const filePath = path.join(componentsDir, component.file);
       expect(fs.existsSync(filePath), `${component.file} should exist`).toBe(true);
 
       const content = readComponentStyle(component.file);
-      expect(content, `${component.file} should contain ${component.baseSelector}`).toContain(component.baseSelector);
+      component.interfacePoints.classSelectors.forEach((selector) => {
+        expect(content, `${component.file} should contain ${selector}`).toContain(selector);
+      });
       component.requiredSelectors.forEach((selector) => {
         expect(content, `${component.file} should contain ${selector}`).toContain(selector);
       });

@@ -8,25 +8,14 @@
 @import './components/textarea.css';
 @import './components/checkbox.css';
 @import './components/switch.css';
-@import './components/radio.css';
+@import './components/radio-group.css';
 @import './components/select.css';
 @import './components/dialog.css';
 @import './components/tabs.css';
-@import './components/dropdown.css';
-@import './components/tooltip.css';
-@import './components/slider.css';
-@import './components/accordion.css';
-@import './components/toast.css';
-@import './components/card-wrapper.css';
-@import './components/card-loading.css';
-@import './components/card-error.css';
-@import './components/iframe-host.css';
-@import './components/cover-frame.css';
-@import './components/dock.css';
-@import './components/tool-window.css';
-@import './components/file-tree.css';
-@import './components/tag-input.css';
-@import './components/zoom-slider.css';
+@import './components/form.css';
+@import './components/file-upload.css';
+@import './components/image-viewer-shell.css';
+@import './components/menu.css';
 
 :root {
   color-scheme: dark;
@@ -69,10 +58,18 @@
   --chips-dropdown-item-color: var(--chips-color-text);
   --chips-dropdown-item-bg-hover: rgba(95, 148, 240, 0.14);
   --chips-dropdown-shadow: 0 16px 42px rgba(2, 10, 24, 0.6);
+  --chips-menu-bg: var(--chips-dropdown-bg);
+  --chips-menu-item-color: var(--chips-dropdown-item-color);
+  --chips-menu-item-bg-hover: var(--chips-dropdown-item-bg-hover);
+  --chips-menu-shadow: var(--chips-dropdown-shadow);
 
   --chips-dialog-bg: var(--chips-color-surface);
   --chips-dialog-backdrop-bg: rgba(5, 9, 15, 0.74);
   --chips-dialog-shadow: 0 24px 60px rgba(2, 9, 20, 0.68);
+  --chips-image-viewer-overlay-bg: rgba(5, 9, 15, 0.78);
+  --chips-image-viewer-stage-border-color: var(--chips-color-border);
+  --chips-image-viewer-close-bg: rgba(14, 21, 32, 0.7);
+  --chips-image-viewer-close-color: #f3f7ff;
 
   --chips-card-wrapper-bg: var(--chips-color-surface);
   --chips-card-wrapper-border-color: var(--chips-color-border);

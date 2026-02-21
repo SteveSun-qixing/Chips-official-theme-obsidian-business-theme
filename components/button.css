@@ -1,145 +1,44 @@
-/* ChipsButton 样式 */
-.chips-button {
+.chips-button,
+[data-scope="button"][data-part="root"] {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: var(--chips-space-2);
+  min-height: var(--chips-button-height-md, 40px);
+  padding: 0 var(--chips-button-padding-x, var(--chips-space-4));
+  border-radius: var(--chips-button-radius, var(--chips-radius-md));
+  border: var(--chips-button-border-width, 1px) solid var(--chips-button-border-color, var(--chips-color-primary));
+  background: var(--chips-button-bg, var(--chips-color-primary));
+  color: var(--chips-button-text, #ffffff);
   font-family: var(--chips-font-family-base);
+  font-size: var(--chips-button-font-size, var(--chips-font-size-md));
   font-weight: var(--chips-font-weight-medium);
-  border: var(--chips-button-border-width, 1px) solid transparent;
   cursor: pointer;
   transition: all var(--chips-motion-duration-fast) var(--chips-motion-easing-default);
-  user-select: none;
-  outline: none;
 }
 
-/* 尺寸变体 */
-.chips-button--sm {
-  height: var(--chips-button-height-sm, 32px);
-  padding: 0 var(--chips-space-3);
-  font-size: var(--chips-font-size-sm);
-  border-radius: var(--chips-radius-sm);
+.chips-button:hover,
+[data-scope="button"][data-part="root"]:hover {
+  background: var(--chips-button-bg-hover, var(--chips-color-primary-hover));
+  border-color: var(--chips-button-border-color-hover, var(--chips-color-primary-hover));
 }
 
-.chips-button--md {
-  height: var(--chips-button-height-md, 40px);
-  padding: 0 var(--chips-space-4);
-  font-size: var(--chips-font-size-md);
-  border-radius: var(--chips-radius-md);
+.chips-button:active,
+[data-scope="button"][data-part="root"]:active {
+  background: var(--chips-button-bg-active, var(--chips-color-primary-active));
+  transform: translateY(var(--chips-button-active-offset, 1px));
 }
 
-.chips-button--lg {
-  height: var(--chips-button-height-lg, 48px);
-  padding: 0 var(--chips-space-5);
-  font-size: var(--chips-font-size-lg);
-  border-radius: var(--chips-radius-md);
+.chips-button:focus-visible,
+[data-scope="button"][data-part="root"]:focus-visible {
+  outline: var(--chips-focus-ring-width, 2px) solid var(--chips-color-focus-ring, var(--chips-color-primary));
+  outline-offset: var(--chips-focus-ring-offset, 2px);
 }
 
-/* 主要变体 */
-.chips-button--primary {
-  background: var(--chips-button-primary-bg, var(--chips-color-primary));
-  color: var(--chips-button-primary-text, #ffffff);
-  border-color: var(--chips-button-primary-border, transparent);
-}
-
-.chips-button--primary:hover {
-  background: var(--chips-button-primary-bg-hover, var(--chips-color-primary-hover));
-}
-
-.chips-button--primary:active {
-  background: var(--chips-button-primary-bg-active, var(--chips-color-primary-active));
-}
-
-.chips-button--primary:focus-visible {
-  outline: 2px solid var(--chips-color-primary);
-  outline-offset: 2px;
-}
-
-/* 次要变体 */
-.chips-button--secondary {
-  background: var(--chips-button-secondary-bg, var(--chips-color-surface));
-  color: var(--chips-button-secondary-text, var(--chips-color-text));
-  border-color: var(--chips-button-secondary-border, var(--chips-color-border));
-}
-
-.chips-button--secondary:hover {
-  background: var(--chips-button-secondary-bg-hover, var(--chips-palette-neutral-100));
-}
-
-.chips-button--secondary:focus-visible {
-  outline: 2px solid var(--chips-color-border);
-  outline-offset: 2px;
-}
-
-/* 幽灵变体 */
-.chips-button--ghost {
-  background: var(--chips-button-ghost-bg, transparent);
-  color: var(--chips-button-ghost-text, var(--chips-color-text));
-}
-
-.chips-button--ghost:hover {
-  background: var(--chips-button-ghost-bg-hover, var(--chips-palette-neutral-100));
-}
-
-.chips-button--ghost:focus-visible {
-  outline: 2px solid var(--chips-color-border);
-  outline-offset: 2px;
-}
-
-/* 危险变体 */
-.chips-button--danger {
-  background: var(--chips-button-danger-bg, var(--chips-color-error));
-  color: var(--chips-button-danger-text, #ffffff);
-}
-
-.chips-button--danger:hover {
-  background: var(--chips-button-danger-bg-hover, #dc2626);
-}
-
-.chips-button--danger:focus-visible {
-  outline: 2px solid var(--chips-color-error);
-  outline-offset: 2px;
-}
-
-/* 禁用状态 */
-.chips-button--disabled,
-.chips-button:disabled {
+.chips-button:disabled,
+[data-scope="button"][data-part="root"]:disabled {
   background: var(--chips-button-disabled-bg, var(--chips-palette-neutral-200));
-  color: var(--chips-button-disabled-text, var(--chips-palette-neutral-400));
-  opacity: var(--chips-button-disabled-opacity, 0.6);
+  border-color: var(--chips-button-disabled-border, var(--chips-palette-neutral-300));
+  color: var(--chips-button-disabled-text, var(--chips-palette-neutral-500));
   cursor: not-allowed;
-  pointer-events: none;
-}
-
-/* 加载状态 */
-.chips-button--loading {
-  position: relative;
-  pointer-events: none;
-}
-
-.chips-button--loading::before {
-  content: '';
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  border: 2px solid currentColor;
-  border-top-color: transparent;
-  border-radius: 50%;
-  animation: chips-button-spin 0.6s linear infinite;
-}
-
-@keyframes chips-button-spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-/* 子元素 */
-.chips-button__icon {
-  display: inline-flex;
-  flex-shrink: 0;
-}
-
-.chips-button__label {
-  display: inline-flex;
+  opacity: var(--chips-button-disabled-opacity, 0.64);
 }
