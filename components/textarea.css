@@ -1,5 +1,5 @@
 .chips-textarea-field,
-[data-scope="textarea"][data-part="root"] {
+[data-scope="chips-textarea"][data-part="root"] {
   display: grid;
   gap: var(--chips-textarea-gap, var(--chips-space-2));
   width: 100%;
@@ -8,13 +8,13 @@
 }
 
 .chips-textarea-field [data-part="label"],
-[data-scope="textarea"] [data-part="label"] {
+[data-scope="chips-textarea"] [data-part="label"] {
   font-size: var(--chips-textarea-label-font-size, var(--chips-font-size-sm));
   color: var(--chips-textarea-label-color, var(--chips-color-text-secondary));
 }
 
 .chips-textarea,
-[data-scope="textarea"] [data-part="control"] {
+[data-scope="chips-textarea"] [data-part="control"] {
   width: 100%;
   min-height: var(--chips-textarea-min-height, 108px);
   padding: var(--chips-textarea-padding, var(--chips-space-3));
@@ -33,30 +33,30 @@
 }
 
 .chips-textarea::placeholder,
-[data-scope="textarea"] [data-part="control"]::placeholder {
+[data-scope="chips-textarea"] [data-part="control"]::placeholder {
   color: var(--chips-textarea-placeholder, var(--chips-palette-neutral-400));
 }
 
 .chips-textarea:focus-visible,
-[data-scope="textarea"] [data-part="control"]:focus-visible {
+[data-scope="chips-textarea"] [data-part="control"]:focus-visible {
   outline: none;
   border-color: var(--chips-textarea-border-color-focus, var(--chips-color-focus-ring));
   box-shadow: var(--chips-textarea-shadow-focus, 0 0 0 3px rgba(59, 130, 246, 0.14));
 }
 
 .chips-textarea--error,
-[data-scope="textarea"] [data-part="control"][aria-invalid="true"] {
+[data-scope="chips-textarea"] [data-part="control"][aria-invalid="true"] {
   border-color: var(--chips-textarea-border-color-error, var(--chips-color-error));
 }
 
 .chips-textarea-field [data-part="helper"],
-[data-scope="textarea"] [data-part="helper"] {
+[data-scope="chips-textarea"] [data-part="helper"] {
   font-size: var(--chips-textarea-helper-font-size, var(--chips-font-size-xs));
   color: var(--chips-textarea-helper-color, var(--chips-color-text-secondary));
 }
 
 .chips-textarea-field [data-part="error"],
-[data-scope="textarea"] [data-part="error"] {
+[data-scope="chips-textarea"] [data-part="error"] {
   font-size: var(--chips-textarea-error-font-size, var(--chips-font-size-xs));
   color: var(--chips-textarea-error-color, var(--chips-color-error));
 }

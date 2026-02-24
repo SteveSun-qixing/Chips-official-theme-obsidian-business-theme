@@ -1,4 +1,4 @@
-[data-scope="dialog"][data-part="backdrop"] {
+[data-scope="chips-dialog"][data-part="backdrop"] {
   position: fixed;
   inset: 0;
   background: var(--chips-dialog-backdrop-bg, rgba(15, 23, 42, 0.45));
@@ -7,7 +7,7 @@
 }
 
 .chips-dialog,
-[data-scope="dialog"][data-part="content"] {
+[data-scope="chips-dialog"][data-part="content"] {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -25,22 +25,22 @@
   padding: var(--chips-dialog-padding, var(--chips-space-4));
 }
 
-[data-scope="dialog"] [data-part="title"] {
+[data-scope="chips-dialog"] [data-part="title"] {
   font-size: var(--chips-dialog-title-font-size, var(--chips-font-size-lg));
   font-weight: var(--chips-dialog-title-font-weight, var(--chips-font-weight-semibold));
 }
 
-[data-scope="dialog"] [data-part="description"] {
+[data-scope="chips-dialog"] [data-part="description"] {
   font-size: var(--chips-dialog-description-font-size, var(--chips-font-size-sm));
   color: var(--chips-dialog-description-color, var(--chips-color-text-secondary));
 }
 
-[data-scope="dialog"] [data-part="body"] {
+[data-scope="chips-dialog"] [data-part="body"] {
   font-size: var(--chips-dialog-body-font-size, var(--chips-font-size-md));
   color: var(--chips-dialog-body-color, var(--chips-color-text));
 }
 
-[data-scope="dialog"] [data-part="close"] {
+[data-scope="chips-dialog"] [data-part="close"] {
   justify-self: end;
   min-width: var(--chips-dialog-close-size, 32px);
   min-height: var(--chips-dialog-close-size, 32px);
@@ -50,7 +50,7 @@
   color: var(--chips-dialog-close-color, var(--chips-color-text));
 }
 
-[data-scope="dialog"] [data-part="close"]:focus-visible {
+[data-scope="chips-dialog"] [data-part="close"]:focus-visible {
   outline: none;
   box-shadow: 0 0 0 var(--chips-focus-ring-width, 3px) var(--chips-color-focus-ring, var(--chips-color-primary));
 }

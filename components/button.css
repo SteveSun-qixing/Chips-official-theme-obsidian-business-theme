@@ -1,5 +1,5 @@
 .chips-button,
-[data-scope="button"][data-part="root"] {
+[data-scope="chips-button"][data-part="root"] {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -25,7 +25,7 @@
 }
 
 .chips-button:hover,
-[data-scope="button"][data-part="root"]:hover {
+[data-scope="chips-button"][data-part="root"]:hover {
   background: var(--chips-button-bg-hover, var(--chips-color-primary-hover));
   border-color: var(--chips-button-border-color-hover, var(--chips-color-primary-hover));
   box-shadow: var(--chips-button-shadow-hover, var(--chips-shadow-md));
@@ -33,14 +33,14 @@
 }
 
 .chips-button:active,
-[data-scope="button"][data-part="root"]:active {
+[data-scope="chips-button"][data-part="root"]:active {
   background: var(--chips-button-bg-active, var(--chips-color-primary-active));
   box-shadow: var(--chips-button-shadow-active, var(--chips-shadow-sm));
   transform: translateY(var(--chips-button-active-offset, 0)) scale(var(--chips-button-active-scale, 0.99));
 }
 
 .chips-button:focus-visible,
-[data-scope="button"][data-part="root"]:focus-visible {
+[data-scope="chips-button"][data-part="root"]:focus-visible {
   outline: none;
   box-shadow:
     0 0 0 var(--chips-focus-ring-width, 3px) var(--chips-color-focus-ring, var(--chips-color-primary)),
@@ -48,7 +48,7 @@
 }
 
 .chips-button:disabled,
-[data-scope="button"][data-part="root"]:disabled {
+[data-scope="chips-button"][data-part="root"]:disabled {
   background: var(--chips-button-disabled-bg, var(--chips-palette-neutral-200));
   border-color: var(--chips-button-disabled-border, var(--chips-palette-neutral-300));
   color: var(--chips-button-disabled-text, var(--chips-palette-neutral-500));
