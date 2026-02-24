@@ -1,10 +1,10 @@
 .chips-radio-group,
-[data-scope="radio-group"][data-part="root"] {
+[data-scope="chips-radio-group"][data-part="root"] {
   display: grid;
   gap: var(--chips-radio-group-gap, var(--chips-space-2));
 }
 
-[data-scope="radio-group"] [data-part="item"] {
+[data-scope="chips-radio-group"] [data-part="item"] {
   display: inline-flex;
   align-items: center;
   gap: var(--chips-radio-item-gap, var(--chips-space-2));
@@ -12,7 +12,7 @@
   cursor: pointer;
 }
 
-[data-scope="radio-group"] [data-part="control"] {
+[data-scope="chips-radio-group"] [data-part="control"] {
   width: var(--chips-radio-size, 16px);
   height: var(--chips-radio-size, 16px);
   border-radius: var(--chips-radius-full);
@@ -25,7 +25,7 @@
   transition: all var(--chips-motion-duration-fast) var(--chips-motion-easing-default);
 }
 
-[data-scope="radio-group"] [data-part="indicator"] {
+[data-scope="chips-radio-group"] [data-part="indicator"] {
   width: var(--chips-radio-dot-size, 8px);
   height: var(--chips-radio-dot-size, 8px);
   border-radius: var(--chips-radius-full);
@@ -35,26 +35,26 @@
   transition: all var(--chips-motion-duration-fast) var(--chips-motion-easing-default);
 }
 
-[data-scope="radio-group"] [data-part="item"]:hover [data-part="control"] {
+[data-scope="chips-radio-group"] [data-part="item"]:hover [data-part="control"] {
   border-color: var(--chips-radio-border-color-hover, var(--chips-radio-border-color, var(--chips-color-border)));
 }
 
-[data-scope="radio-group"] [data-part="item"][data-state="checked"] [data-part="control"] {
+[data-scope="chips-radio-group"] [data-part="item"][data-state="checked"] [data-part="control"] {
   border-color: var(--chips-radio-border-color-checked, var(--chips-color-primary));
   background: var(--chips-radio-bg-checked, var(--chips-color-primary));
 }
 
-[data-scope="radio-group"] [data-part="item"][data-state="checked"] [data-part="indicator"] {
+[data-scope="chips-radio-group"] [data-part="item"][data-state="checked"] [data-part="indicator"] {
   transform: scale(1);
   opacity: 1;
 }
 
-[data-scope="radio-group"] [data-part="item"][data-disabled],
-[data-scope="radio-group"] [data-part="item"][aria-disabled="true"] {
+[data-scope="chips-radio-group"] [data-part="item"][data-disabled],
+[data-scope="chips-radio-group"] [data-part="item"][aria-disabled="true"] {
   opacity: var(--chips-radio-disabled-opacity, 0.56);
   cursor: not-allowed;
 }
 
-[data-scope="radio-group"] [data-part="label"] {
+[data-scope="chips-radio-group"] [data-part="label"] {
   font-size: var(--chips-radio-label-font-size, var(--chips-font-size-sm));
 }

@@ -1,5 +1,5 @@
 .chips-checkbox,
-[data-scope="checkbox"][data-part="root"] {
+[data-scope="chips-checkbox"][data-part="root"] {
   display: inline-flex;
   align-items: center;
   gap: var(--chips-checkbox-gap, var(--chips-space-2));
@@ -8,7 +8,7 @@
 }
 
 .chips-checkbox [data-part="control"],
-[data-scope="checkbox"] [data-part="control"] {
+[data-scope="chips-checkbox"] [data-part="control"] {
   width: var(--chips-checkbox-size, 16px);
   height: var(--chips-checkbox-size, 16px);
   border-radius: var(--chips-checkbox-border-radius, var(--chips-radius-sm));
@@ -22,31 +22,31 @@
 }
 
 .chips-checkbox [data-part="indicator"],
-[data-scope="checkbox"] [data-part="indicator"] {
+[data-scope="chips-checkbox"] [data-part="indicator"] {
   color: var(--chips-checkbox-checkmark-color, #ffffff);
   font-size: var(--chips-checkbox-indicator-size, 12px);
   transform: scale(var(--chips-checkbox-indicator-scale, 0.88));
 }
 
 .chips-checkbox:hover [data-part="control"],
-[data-scope="checkbox"][data-part="root"]:hover [data-part="control"] {
+[data-scope="chips-checkbox"][data-part="root"]:hover [data-part="control"] {
   border-color: var(--chips-checkbox-border-color-hover, var(--chips-checkbox-border-color, var(--chips-color-border)));
 }
 
 .chips-checkbox[aria-checked="true"] [data-part="control"],
-[data-scope="checkbox"][aria-checked="true"] [data-part="control"] {
+[data-scope="chips-checkbox"][aria-checked="true"] [data-part="control"] {
   border-color: var(--chips-checkbox-border-color-checked, var(--chips-color-primary));
   background: var(--chips-checkbox-bg-checked, var(--chips-color-primary));
 }
 
 .chips-checkbox:focus-visible,
-[data-scope="checkbox"][data-part="root"]:focus-visible {
+[data-scope="chips-checkbox"][data-part="root"]:focus-visible {
   outline: none;
   box-shadow: 0 0 0 var(--chips-focus-ring-width, 3px) var(--chips-color-focus-ring, var(--chips-color-primary));
 }
 
 .chips-checkbox[aria-disabled="true"],
-[data-scope="checkbox"][aria-disabled="true"] {
+[data-scope="chips-checkbox"][aria-disabled="true"] {
   opacity: var(--chips-checkbox-disabled-opacity, 0.56);
   cursor: not-allowed;
 }

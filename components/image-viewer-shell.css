@@ -1,5 +1,5 @@
 .chips-image-viewer-shell,
-[data-scope="image-viewer-shell"][data-part="overlay"] {
+[data-scope="chips-image-viewer-shell"][data-part="overlay"] {
   position: fixed;
   inset: 0;
   display: flex;
@@ -11,7 +11,7 @@
 }
 
 .chips-image-viewer-shell-stage,
-[data-scope="image-viewer-shell"][data-part="stage"] {
+[data-scope="chips-image-viewer-shell"][data-part="stage"] {
   position: relative;
   width: min(var(--chips-image-viewer-stage-width, 96vw), var(--chips-image-viewer-stage-max-width, 1600px));
   height: var(--chips-image-viewer-stage-height, 92vh);
@@ -26,7 +26,7 @@
 }
 
 .chips-image-viewer-shell-image,
-[data-scope="image-viewer-shell"][data-part="image"] {
+[data-scope="chips-image-viewer-shell"][data-part="image"] {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
@@ -34,7 +34,7 @@
 }
 
 .chips-image-viewer-shell-close,
-[data-scope="image-viewer-shell"][data-part="close"] {
+[data-scope="chips-image-viewer-shell"][data-part="close"] {
   position: absolute;
   top: var(--chips-image-viewer-close-top, var(--chips-space-5));
   right: var(--chips-image-viewer-close-right, var(--chips-space-6));
@@ -47,7 +47,7 @@
 }
 
 .chips-image-viewer-shell-close:focus-visible,
-[data-scope="image-viewer-shell"][data-part="close"]:focus-visible {
+[data-scope="chips-image-viewer-shell"][data-part="close"]:focus-visible {
   outline: none;
   box-shadow: 0 0 0 var(--chips-focus-ring-width, 3px) var(--chips-color-focus-ring, var(--chips-color-primary));
 }
