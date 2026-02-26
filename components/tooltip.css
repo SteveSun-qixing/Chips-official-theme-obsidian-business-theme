@@ -1,32 +1,58 @@
-.chips-tooltip {
-  position: relative;
-  display: inline-flex;
-  max-width: var(--chips-tooltip-max-width, 240px);
-  padding: var(--chips-tooltip-padding, var(--chips-space-2) var(--chips-space-3));
-  border-radius: var(--chips-tooltip-border-radius, var(--chips-radius-sm));
-  background: var(--chips-tooltip-bg, rgba(15, 23, 42, 0.92));
-  color: var(--chips-tooltip-text, #fff);
-  font-size: var(--chips-tooltip-font-size, var(--chips-font-size-xs));
-  box-shadow: var(--chips-tooltip-shadow, var(--chips-shadow-md));
+/* chips-tooltip | auto-aligned with stage04 contract */
+/* min variable refs required: 6 */
+.chips-tooltip,
+[data-scope="chips-tooltip"][data-part="root"] {
+  display: grid;
+  gap: var(--chips-layout-space-2, var(--chips-layout-space-2));
+  padding: var(--chips-layout-space-3, var(--chips-layout-space-3));
+  border: 1px solid var(--chips-sys-color-border-default, var(--chips-sys-color-border-default));
+  border-radius: var(--chips-layout-radius-md, var(--chips-layout-radius-md));
+  background: var(--chips-sys-color-surface, var(--chips-sys-color-surface));
+  color: var(--chips-sys-color-text-primary, var(--chips-sys-color-text-primary));
+  box-shadow: var(--chips-comp-elevation-sm, var(--chips-comp-elevation-sm));
+  font-family: var(--chips-sys-font-family-ui, var(--chips-sys-font-family-ui));
+  font-size: var(--chips-sys-font-size-sm, var(--chips-sys-font-size-sm));
+  line-height: var(--chips-sys-font-line-height-normal, var(--chips-sys-font-line-height-normal));
+  transition: border-color var(--chips-motion-duration-fast, var(--chips-motion-duration-fast)) var(--chips-motion-easing-standard, var(--chips-motion-easing-standard)),
+    box-shadow var(--chips-motion-duration-fast, var(--chips-motion-duration-fast)) var(--chips-motion-easing-standard, var(--chips-motion-easing-standard)),
+    background var(--chips-motion-duration-fast, var(--chips-motion-duration-fast)) var(--chips-motion-easing-standard, var(--chips-motion-easing-standard));
 }
 
-.chips-tooltip::after {
-  content: '';
-  position: absolute;
-  width: var(--chips-tooltip-arrow-size, 8px);
-  height: var(--chips-tooltip-arrow-size, 8px);
-  background: inherit;
-  transform: rotate(45deg);
+[data-scope="chips-tooltip"][data-part="root"]:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--chips-sys-color-state-focus, var(--chips-sys-color-state-focus)),
+    var(--chips-comp-elevation-sm, var(--chips-comp-elevation-sm));
+  border-color: var(--chips-sys-color-brand, var(--chips-sys-color-brand));
 }
 
-.chips-tooltip--top::after {
-  left: 50%;
-  bottom: calc(var(--chips-tooltip-arrow-size, 8px) * -0.5);
-  transform: translateX(-50%) rotate(45deg);
+[data-scope="chips-tooltip"] [data-part="content"] {
+  color: var(--chips-sys-color-text-primary, var(--chips-sys-color-text-primary));
+  border-radius: var(--chips-layout-radius-sm, var(--chips-layout-radius-md, var(--chips-layout-radius-md)));
+  transition: color var(--chips-motion-duration-fast, var(--chips-motion-duration-fast)) var(--chips-motion-easing-standard, var(--chips-motion-easing-standard));
 }
 
-.chips-tooltip--bottom::after {
-  left: 50%;
-  top: calc(var(--chips-tooltip-arrow-size, 8px) * -0.5);
-  transform: translateX(-50%) rotate(45deg);
+[data-scope="chips-tooltip"] [data-part="trigger"] {
+  color: var(--chips-sys-color-text-primary, var(--chips-sys-color-text-primary));
+  border-radius: var(--chips-layout-radius-sm, var(--chips-layout-radius-md, var(--chips-layout-radius-md)));
+  transition: color var(--chips-motion-duration-fast, var(--chips-motion-duration-fast)) var(--chips-motion-easing-standard, var(--chips-motion-easing-standard));
+}
+
+[data-scope="chips-tooltip"] [data-part="content"] {
+  color: var(--chips-sys-color-text-primary, var(--chips-sys-color-text-primary));
+  border-color: var(--chips-sys-color-border-default, var(--chips-sys-color-border-default));
+}
+
+[data-scope="chips-tooltip"] [data-part="trigger"] {
+  color: var(--chips-sys-color-text-primary, var(--chips-sys-color-text-primary));
+  border-color: var(--chips-sys-color-border-default, var(--chips-sys-color-border-default));
+}
+
+[data-scope="chips-tooltip"][data-state="active"] {
+  border-color: var(--chips-sys-color-brand, var(--chips-sys-color-brand));
+  box-shadow: var(--chips-comp-elevation-sm, var(--chips-comp-elevation-sm));
+}
+
+[data-scope="chips-tooltip"][data-disabled], [data-scope="chips-tooltip"][aria-disabled="true"] {
+  opacity: var(--chips-comp-opacity-disabled, 0.56);
+  cursor: not-allowed;
 }

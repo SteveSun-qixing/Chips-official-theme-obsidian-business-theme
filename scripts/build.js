@@ -1,114 +1,111 @@
 import fs from 'fs';
 import path from 'path';
-import { fileURLToPath } from 'url';
 import { execSync } from 'child_process';
+import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-console.log('Building Chips Obsidian Business Theme...\n');
+const ROOT_DIR = path.resolve(__dirname, '..');
+const DIST_DIR = path.join(ROOT_DIR, 'dist');
+const CONTRACT_PATH = path.join(ROOT_DIR, 'contracts', 'theme-interface.contract.json');
 
-// 1. 构建 Tokens
-console.log('Step 1: Building tokens with Style Dictionary...');
-try {
+function readJson(filePath) {
+  return JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+}
+
+function ensureDir(dirPath) {
+  if (!fs.existsSync(dirPath)) {
+    fs.mkdirSync(dirPath, { recursive: true });
+  }
+}
+
+function cleanDir(dirPath) {
+  fs.rmSync(dirPath, { recursive: true, force: true });
+  fs.mkdirSync(dirPath, { recursive: true });
+}
+
+function copyFile(source, target) {
+  ensureDir(path.dirname(target));
+  fs.copyFileSync(source, target);
+}
+
+function copyFilesByList(sourceDir, targetDir, files) {
+  ensureDir(targetDir);
+  files.forEach((file) => {
+    const source = path.join(sourceDir, file);
+    const target = path.join(targetDir, file);
+    if (!fs.existsSync(source)) {
+      throw new Error(`missing file: ${source}`);
+    }
+    copyFile(source, target);
+  });
+}
+
+function copyDirectoryByExt(sourceDir, targetDir, extension) {
+  if (!fs.existsSync(sourceDir)) {
+    return 0;
+  }
+  ensureDir(targetDir);
+  const files = fs.readdirSync(sourceDir).filter((name) => name.endsWith(extension));
+  files.forEach((file) => {
+    copyFile(path.join(sourceDir, file), path.join(targetDir, file));
+  });
+  return files.length;
+}
+
+function main() {
+  console.log('Building Chips Obsidian Business Theme...\n');
+
+  if (!fs.existsSync(CONTRACT_PATH)) {
+    throw new Error('contracts/theme-interface.contract.json not found');
+  }
+  const contract = readJson(CONTRACT_PATH);
+  const contractFiles = contract.components.map((component) => component.file);
+
+  console.log('Step 1: Building tokens with Style Dictionary...');
   execSync('npm run build:tokens', { stdio: 'inherit' });
   console.log('✓ Tokens built successfully\n');
+
+  console.log('Step 2: Syncing token entry and theme entry...');
+  cleanDir(path.join(DIST_DIR, 'components'));
+  cleanDir(path.join(DIST_DIR, 'icons'));
+  cleanDir(path.join(DIST_DIR, 'animations'));
+  copyFile(path.join(DIST_DIR, 'tokens', 'global.css'), path.join(ROOT_DIR, 'tokens', 'global.css'));
+  copyFile(path.join(ROOT_DIR, 'theme.css'), path.join(DIST_DIR, 'theme.css'));
+  console.log('✓ Synced tokens/global.css and theme.css\n');
+
+  console.log('Step 3: Copying contract component styles...');
+  copyFilesByList(path.join(ROOT_DIR, 'components'), path.join(DIST_DIR, 'components'), contractFiles);
+  console.log(`✓ Copied ${contractFiles.length} contract component styles\n`);
+
+  console.log('Step 4: Copying icon assets...');
+  const iconCssCount = copyDirectoryByExt(path.join(ROOT_DIR, 'icons'), path.join(DIST_DIR, 'icons'), '.css');
+
+  const svgSourceDir = path.join(ROOT_DIR, 'icons', 'svg');
+  const svgTargetDir = path.join(DIST_DIR, 'icons', 'svg');
+  let svgCount = 0;
+  if (fs.existsSync(svgSourceDir)) {
+    ensureDir(svgTargetDir);
+    const files = fs.readdirSync(svgSourceDir).filter((name) => name.endsWith('.svg'));
+    files.forEach((file) => {
+      copyFile(path.join(svgSourceDir, file), path.join(svgTargetDir, file));
+    });
+    svgCount = files.length;
+  }
+  console.log(`✓ Copied ${iconCssCount} icon CSS files and ${svgCount} SVG files\n`);
+
+  console.log('Step 5: Copying animation assets...');
+  const animationCount = copyDirectoryByExt(path.join(ROOT_DIR, 'animations'), path.join(DIST_DIR, 'animations'), '.css');
+  console.log(`✓ Copied ${animationCount} animation CSS files\n`);
+
+  console.log('✓ Build complete!');
+  console.log('Output directory: dist/');
+}
+
+try {
+  main();
 } catch (error) {
-  console.error('✗ Failed to build tokens');
+  console.error('✗ Build failed:', error instanceof Error ? error.message : error);
   process.exit(1);
 }
-
-// 2. 同步 manifest 入口 tokens/global.css
-console.log('Step 2: Syncing manifest token entry...');
-const distTokenCss = path.join(__dirname, '..', 'dist', 'tokens', 'global.css');
-const rootTokenCss = path.join(__dirname, '..', 'tokens', 'global.css');
-if (!fs.existsSync(path.dirname(rootTokenCss))) {
-  fs.mkdirSync(path.dirname(rootTokenCss), { recursive: true });
-}
-fs.copyFileSync(distTokenCss, rootTokenCss);
-console.log('✓ Synced tokens/global.css\n');
-
-// 3. 复制主题入口
-console.log('Step 3: Copying theme entry CSS...');
-const themeCssSrc = path.join(__dirname, '..', 'theme.css');
-const distThemeCss = path.join(__dirname, '..', 'dist', 'theme.css');
-if (!fs.existsSync(path.dirname(distThemeCss))) {
-  fs.mkdirSync(path.dirname(distThemeCss), { recursive: true });
-}
-fs.copyFileSync(themeCssSrc, distThemeCss);
-console.log('✓ Copied theme.css\n');
-
-// 4. 复制组件样式
-console.log('Step 4: Copying component styles...');
-const componentsDir = path.join(__dirname, '..', 'components');
-const distComponentsDir = path.join(__dirname, '..', 'dist', 'components');
-
-if (!fs.existsSync(distComponentsDir)) {
-  fs.mkdirSync(distComponentsDir, { recursive: true });
-}
-
-const componentFiles = fs.readdirSync(componentsDir).filter(f => f.endsWith('.css'));
-componentFiles.forEach(file => {
-  fs.copyFileSync(
-    path.join(componentsDir, file),
-    path.join(distComponentsDir, file)
-  );
-});
-console.log(`✓ Copied ${componentFiles.length} component styles\n`);
-
-// 5. 复制图标
-console.log('Step 5: Copying icons...');
-const iconsDir = path.join(__dirname, '..', 'icons');
-const distIconsDir = path.join(__dirname, '..', 'dist', 'icons');
-
-if (!fs.existsSync(distIconsDir)) {
-  fs.mkdirSync(distIconsDir, { recursive: true });
-}
-
-const iconFiles = fs.readdirSync(iconsDir).filter(f => f.endsWith('.css'));
-iconFiles.forEach(file => {
-  fs.copyFileSync(
-    path.join(iconsDir, file),
-    path.join(distIconsDir, file)
-  );
-});
-
-// 复制 SVG 图标（如果存在）
-const svgDir = path.join(iconsDir, 'svg');
-const distSvgDir = path.join(distIconsDir, 'svg');
-if (fs.existsSync(svgDir)) {
-  if (!fs.existsSync(distSvgDir)) {
-    fs.mkdirSync(distSvgDir, { recursive: true });
-  }
-  const svgFiles = fs.readdirSync(svgDir).filter(f => f.endsWith('.svg'));
-  svgFiles.forEach(file => {
-    fs.copyFileSync(
-      path.join(svgDir, file),
-      path.join(distSvgDir, file)
-    );
-  });
-  console.log(`✓ Copied ${iconFiles.length} icon CSS files and ${svgFiles.length} SVG files\n`);
-} else {
-  console.log(`✓ Copied ${iconFiles.length} icon CSS files\n`);
-}
-
-// 6. 复制动画
-console.log('Step 6: Copying animations...');
-const animationsDir = path.join(__dirname, '..', 'animations');
-const distAnimationsDir = path.join(__dirname, '..', 'dist', 'animations');
-
-if (!fs.existsSync(distAnimationsDir)) {
-  fs.mkdirSync(distAnimationsDir, { recursive: true });
-}
-
-const animationFiles = fs.readdirSync(animationsDir).filter(f => f.endsWith('.css'));
-animationFiles.forEach(file => {
-  fs.copyFileSync(
-    path.join(animationsDir, file),
-    path.join(distAnimationsDir, file)
-  );
-});
-console.log(`✓ Copied ${animationFiles.length} animation files\n`);
-
-console.log('✓ Build complete!');
-console.log('\nOutput directory: dist/');

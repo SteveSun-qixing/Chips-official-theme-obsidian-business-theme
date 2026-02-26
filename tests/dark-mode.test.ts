@@ -6,25 +6,17 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-describe('Dark Mode', () => {
-  it('should have dark mode token definitions', () => {
-    const colorTokenPath = path.join(__dirname, '..', 'tokens', 'color.json');
-    expect(fs.existsSync(colorTokenPath)).toBe(true);
-
-    const content = fs.readFileSync(colorTokenPath, 'utf-8');
-    const tokens = JSON.parse(content);
-
-    // 验证有色板定义
-    expect(tokens.chips.palette).toBeDefined();
-    expect(tokens.chips.color).toBeDefined();
-    expect(tokens.chips.color.background.value).toBe('{chips.palette.neutral.50}');
-    expect(tokens.chips.color.text.value).toBe('{chips.palette.neutral.900}');
+describe('Theme Semantics', () => {
+  it('keeps single semantic manifest without dark/light labels', () => {
+    const manifest = fs.readFileSync(path.join(__dirname, '..', 'manifest.yaml'), 'utf-8');
+    expect(manifest).not.toContain('darkMode:');
+    expect(manifest).not.toContain('lightMode:');
   });
 
-  it('should declare dark mode manifest contract', () => {
-    const manifestPath = path.join(__dirname, '..', 'manifest.yaml');
-    const manifest = fs.readFileSync(manifestPath, 'utf-8');
-    expect(manifest).toContain('darkMode: true');
-    expect(manifest).toContain('inherits: "chips-official.default-theme"');
+  it('keeps archive legacy-tokens for migrated historical token files', () => {
+    const legacyTokensDir = path.join(__dirname, '..', 'archive', 'legacy-tokens');
+    expect(fs.existsSync(legacyTokensDir)).toBe(true);
+    const files = fs.readdirSync(legacyTokensDir).filter((file) => file.endsWith('.json'));
+    expect(files.length).toBeGreaterThan(0);
   });
 });

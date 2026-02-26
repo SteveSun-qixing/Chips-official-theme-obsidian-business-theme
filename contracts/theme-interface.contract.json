@@ -1,7 +1,7 @@
 {
-  "version": "2.0.0",
-  "generatedAt": "2026-02-21",
-  "description": "Theme interface contract aligned with current @chips/component-library React exports.",
+  "version": "2.2.0",
+  "generatedAt": "2026-02-25",
+  "description": "Theme interface contract frozen for stage04 task01 using themed component exports.",
   "placeholderMarkers": [
     "基础样式 - 使用CSS变量引用Token",
     "添加状态样式",
@@ -10,12 +10,49 @@
   ],
   "components": [
     {
-      "name": "button",
-      "exportName": "Button",
-      "sourceFile": "Button.tsx",
+      "name": "chips-attachment-preview",
+      "exportName": "ChipsAttachmentPreview",
+      "sourceFile": "media-content/ChipsAttachmentPreview.tsx",
+      "file": "attachment-preview.css",
+      "interfacePoints": {
+        "scope": "chips-attachment-preview",
+        "classSelectors": [
+          ".chips-attachment-preview",
+          ".chips-attachment-preview-download",
+          ".chips-attachment-preview-open",
+          ".chips-attachment-preview-retry",
+          ".chips-attachment-preview-thumbnail"
+        ],
+        "parts": [
+          "actions",
+          "content",
+          "download",
+          "fallback",
+          "meta",
+          "name",
+          "open",
+          "placeholder",
+          "retry",
+          "root",
+          "summary",
+          "thumbnail"
+        ]
+      },
+      "requiredSelectors": [
+        ".chips-attachment-preview",
+        "[data-scope=\"chips-attachment-preview\"][data-part=\"root\"]",
+        "[data-scope=\"chips-attachment-preview\"] [data-part=\"actions\"]",
+        "[data-scope=\"chips-attachment-preview\"] [data-part=\"content\"]"
+      ],
+      "minVariableRefs": 8
+    },
+    {
+      "name": "chips-button",
+      "exportName": "ChipsButton",
+      "sourceFile": "base-interactive/Button.tsx",
       "file": "button.css",
       "interfacePoints": {
-        "scope": "button",
+        "scope": "chips-button",
         "classSelectors": [
           ".chips-button"
         ],
@@ -25,214 +62,318 @@
       },
       "requiredSelectors": [
         ".chips-button",
-        "[data-scope=\"button\"][data-part=\"root\"]",
-        "[data-scope=\"button\"][data-part=\"root\"]:focus-visible",
-        "[data-scope=\"button\"][data-part=\"root\"]:disabled"
+        "[data-scope=\"chips-button\"][data-part=\"root\"]"
       ],
-      "minVariableRefs": 8
+      "minVariableRefs": 5
     },
     {
-      "name": "input",
-      "exportName": "Input",
-      "sourceFile": "Input.tsx",
-      "file": "input.css",
+      "name": "chips-workbench-card-shell",
+      "exportName": "ChipsCardShell",
+      "sourceFile": "workbench/ChipsCardShell.tsx",
+      "file": "workbench-card-shell.css",
       "interfacePoints": {
-        "scope": "input",
+        "scope": "chips-workbench-card-shell",
         "classSelectors": [
-          ".chips-input"
+          ".chips-workbench-card-shell"
         ],
         "parts": [
-          "root",
-          "label",
-          "control",
-          "helper",
-          "error"
+          "body",
+          "footer",
+          "header",
+          "root"
         ]
       },
       "requiredSelectors": [
-        ".chips-input",
-        "[data-scope=\"input\"][data-part=\"root\"]",
-        "[data-scope=\"input\"] [data-part=\"control\"]",
-        "[data-scope=\"input\"] [data-part=\"control\"]:focus-visible",
-        "[data-scope=\"input\"] [data-part=\"error\"]"
+        ".chips-workbench-card-shell",
+        "[data-scope=\"chips-workbench-card-shell\"][data-part=\"root\"]",
+        "[data-scope=\"chips-workbench-card-shell\"] [data-part=\"body\"]",
+        "[data-scope=\"chips-workbench-card-shell\"] [data-part=\"footer\"]"
       ],
-      "minVariableRefs": 8
+      "minVariableRefs": 7
     },
     {
-      "name": "textarea",
-      "exportName": "Textarea",
-      "sourceFile": "Textarea.tsx",
-      "file": "textarea.css",
-      "interfacePoints": {
-        "scope": "textarea",
-        "classSelectors": [
-          ".chips-textarea-field",
-          ".chips-textarea"
-        ],
-        "parts": [
-          "root",
-          "label",
-          "control",
-          "helper",
-          "error"
-        ]
-      },
-      "requiredSelectors": [
-        ".chips-textarea",
-        "[data-scope=\"textarea\"][data-part=\"root\"]",
-        "[data-scope=\"textarea\"] [data-part=\"control\"]",
-        "[data-scope=\"textarea\"] [data-part=\"control\"]:focus-visible",
-        "[data-scope=\"textarea\"] [data-part=\"error\"]"
-      ],
-      "minVariableRefs": 8
-    },
-    {
-      "name": "checkbox",
-      "exportName": "Checkbox",
-      "sourceFile": "Checkbox.tsx",
+      "name": "chips-checkbox",
+      "exportName": "ChipsCheckbox",
+      "sourceFile": "base-interactive/Checkbox.tsx",
       "file": "checkbox.css",
       "interfacePoints": {
-        "scope": "checkbox",
+        "scope": "chips-checkbox",
         "classSelectors": [
           ".chips-checkbox"
         ],
         "parts": [
-          "root",
           "control",
           "indicator",
-          "label"
+          "indicator-icon",
+          "label",
+          "root"
         ]
       },
       "requiredSelectors": [
         ".chips-checkbox",
-        "[data-scope=\"checkbox\"][data-part=\"root\"]",
-        "[data-scope=\"checkbox\"] [data-part=\"control\"]",
-        "[data-scope=\"checkbox\"] [data-part=\"indicator\"]",
-        "[data-scope=\"checkbox\"][aria-checked=\"true\"] [data-part=\"control\"]"
-      ],
-      "minVariableRefs": 7
-    },
-    {
-      "name": "switch",
-      "exportName": "Switch",
-      "sourceFile": "Switch.tsx",
-      "file": "switch.css",
-      "interfacePoints": {
-        "scope": "switch",
-        "classSelectors": [
-          ".chips-switch"
-        ],
-        "parts": [
-          "root",
-          "control",
-          "thumb",
-          "label"
-        ]
-      },
-      "requiredSelectors": [
-        ".chips-switch",
-        "[data-scope=\"switch\"][data-part=\"root\"]",
-        "[data-scope=\"switch\"] [data-part=\"control\"]",
-        "[data-scope=\"switch\"] [data-part=\"thumb\"]",
-        "[data-scope=\"switch\"][aria-checked=\"true\"] [data-part=\"thumb\"]"
-      ],
-      "minVariableRefs": 7
-    },
-    {
-      "name": "select",
-      "exportName": "Select",
-      "sourceFile": "Select.tsx",
-      "file": "select.css",
-      "interfacePoints": {
-        "scope": "select",
-        "classSelectors": [
-          ".chips-select",
-          ".chips-select__trigger",
-          ".chips-select__panel",
-          ".chips-select__option"
-        ],
-        "parts": [
-          "root",
-          "label",
-          "control",
-          "trigger",
-          "value",
-          "indicator",
-          "content",
-          "item"
-        ]
-      },
-      "requiredSelectors": [
-        ".chips-select",
-        "[data-scope=\"select\"][data-part=\"root\"]",
-        "[data-scope=\"select\"] [data-part=\"trigger\"]",
-        "[data-scope=\"select\"] [data-part=\"content\"]",
-        "[data-scope=\"select\"] [data-part=\"item\"]"
+        "[data-scope=\"chips-checkbox\"][data-part=\"root\"]",
+        "[data-scope=\"chips-checkbox\"] [data-part=\"control\"]",
+        "[data-scope=\"chips-checkbox\"] [data-part=\"indicator\"]"
       ],
       "minVariableRefs": 8
     },
     {
-      "name": "dialog",
-      "exportName": "Dialog",
-      "sourceFile": "Dialog.tsx",
+      "name": "chips-code-block",
+      "exportName": "ChipsCodeBlock",
+      "sourceFile": "media-content/ChipsCodeBlock.tsx",
+      "file": "code-block.css",
+      "interfacePoints": {
+        "scope": "chips-code-block",
+        "classSelectors": [
+          ".chips-code-block",
+          ".chips-code-block-content",
+          ".chips-code-block-copy",
+          ".chips-code-block-header"
+        ],
+        "parts": [
+          "actions",
+          "code",
+          "content",
+          "copy",
+          "error",
+          "header",
+          "language",
+          "line",
+          "line-number",
+          "line-text",
+          "root",
+          "title"
+        ]
+      },
+      "requiredSelectors": [
+        ".chips-code-block",
+        "[data-scope=\"chips-code-block\"][data-part=\"root\"]",
+        "[data-scope=\"chips-code-block\"] [data-part=\"actions\"]",
+        "[data-scope=\"chips-code-block\"] [data-part=\"code\"]"
+      ],
+      "minVariableRefs": 8
+    },
+    {
+      "name": "chips-command-palette",
+      "exportName": "ChipsCommandPalette",
+      "sourceFile": "data-form/ChipsCommandPalette.tsx",
+      "file": "command-palette.css",
+      "interfacePoints": {
+        "scope": "chips-command-palette",
+        "classSelectors": [
+          ".chips-command-palette"
+        ],
+        "parts": [
+          "empty",
+          "input",
+          "input-wrapper",
+          "item",
+          "list",
+          "root"
+        ]
+      },
+      "requiredSelectors": [
+        ".chips-command-palette",
+        "[data-scope=\"chips-command-palette\"][data-part=\"root\"]",
+        "[data-scope=\"chips-command-palette\"] [data-part=\"empty\"]",
+        "[data-scope=\"chips-command-palette\"] [data-part=\"input\"]"
+      ],
+      "minVariableRefs": 8
+    },
+    {
+      "name": "chips-data-grid",
+      "exportName": "ChipsDataGrid",
+      "sourceFile": "data-form/ChipsDataGrid.tsx",
+      "file": "data-grid.css",
+      "interfacePoints": {
+        "scope": "chips-data-grid",
+        "classSelectors": [
+          ".chips-data-grid"
+        ],
+        "parts": [
+          "cell",
+          "empty",
+          "header",
+          "header-cell",
+          "header-row",
+          "root",
+          "row",
+          "spacer-bottom",
+          "spacer-top",
+          "viewport"
+        ]
+      },
+      "requiredSelectors": [
+        ".chips-data-grid",
+        "[data-scope=\"chips-data-grid\"][data-part=\"root\"]",
+        "[data-scope=\"chips-data-grid\"] [data-part=\"cell\"]",
+        "[data-scope=\"chips-data-grid\"] [data-part=\"empty\"]"
+      ],
+      "minVariableRefs": 8
+    },
+    {
+      "name": "chips-date-time",
+      "exportName": "ChipsDateTime",
+      "sourceFile": "data-form/ChipsDateTime.tsx",
+      "file": "date-time.css",
+      "interfacePoints": {
+        "scope": "chips-date-time",
+        "classSelectors": [
+          ".chips-date-time"
+        ],
+        "parts": [
+          "control"
+        ]
+      },
+      "requiredSelectors": [
+        ".chips-date-time",
+        "[data-scope=\"chips-date-time\"]",
+        "[data-scope=\"chips-date-time\"] [data-part=\"control\"]"
+      ],
+      "minVariableRefs": 5
+    },
+    {
+      "name": "chips-dialog",
+      "exportName": "ChipsDialog",
+      "sourceFile": "base-interactive/Dialog.tsx",
       "file": "dialog.css",
       "interfacePoints": {
-        "scope": "dialog",
+        "scope": "chips-dialog",
         "classSelectors": [
           ".chips-dialog"
         ],
         "parts": [
           "backdrop",
-          "content",
-          "title",
-          "description",
           "body",
-          "close"
+          "close",
+          "content",
+          "description",
+          "footer",
+          "positioner",
+          "root",
+          "title",
+          "trigger"
         ]
       },
       "requiredSelectors": [
         ".chips-dialog",
-        "[data-scope=\"dialog\"][data-part=\"backdrop\"]",
-        "[data-scope=\"dialog\"][data-part=\"content\"]",
-        "[data-scope=\"dialog\"] [data-part=\"title\"]",
-        "[data-scope=\"dialog\"] [data-part=\"close\"]"
+        "[data-scope=\"chips-dialog\"][data-part=\"root\"]",
+        "[data-scope=\"chips-dialog\"] [data-part=\"backdrop\"]",
+        "[data-scope=\"chips-dialog\"] [data-part=\"body\"]"
       ],
       "minVariableRefs": 8
     },
     {
-      "name": "tabs",
-      "exportName": "Tabs",
-      "sourceFile": "Tabs.tsx",
-      "file": "tabs.css",
+      "name": "chips-workbench-dock-panel",
+      "exportName": "ChipsDockPanel",
+      "sourceFile": "workbench/ChipsDockPanel.tsx",
+      "file": "workbench-dock-panel.css",
       "interfacePoints": {
-        "scope": "tabs",
+        "scope": "chips-workbench-dock-panel",
         "classSelectors": [
-          ".chips-tabs"
+          ".chips-workbench-dock-panel"
         ],
         "parts": [
-          "root",
-          "list",
-          "trigger",
-          "indicator",
-          "content"
+          "panel",
+          "panel-content",
+          "panel-header",
+          "panel-title",
+          "panel-toggle",
+          "root"
         ]
       },
       "requiredSelectors": [
-        ".chips-tabs",
-        "[data-scope=\"tabs\"][data-part=\"root\"]",
-        "[data-scope=\"tabs\"] [data-part=\"list\"]",
-        "[data-scope=\"tabs\"] [data-part=\"trigger\"]",
-        "[data-scope=\"tabs\"] [data-part=\"content\"]"
+        ".chips-workbench-dock-panel",
+        "[data-scope=\"chips-workbench-dock-panel\"][data-part=\"root\"]",
+        "[data-scope=\"chips-workbench-dock-panel\"] [data-part=\"panel\"]",
+        "[data-scope=\"chips-workbench-dock-panel\"] [data-part=\"panel-content\"]"
       ],
       "minVariableRefs": 8
     },
     {
-      "name": "form",
-      "exportName": "Form",
-      "sourceFile": "Form.tsx",
+      "name": "chips-empty-state",
+      "exportName": "ChipsEmptyState",
+      "sourceFile": "system-ux/EmptyState.tsx",
+      "file": "empty-state.css",
+      "interfacePoints": {
+        "scope": "chips-empty-state",
+        "classSelectors": [
+          ".chips-empty-state"
+        ],
+        "parts": [
+          "action",
+          "body",
+          "description",
+          "icon",
+          "root",
+          "title"
+        ]
+      },
+      "requiredSelectors": [
+        ".chips-empty-state",
+        "[data-scope=\"chips-empty-state\"][data-part=\"root\"]",
+        "[data-scope=\"chips-empty-state\"] [data-part=\"action\"]",
+        "[data-scope=\"chips-empty-state\"] [data-part=\"body\"]"
+      ],
+      "minVariableRefs": 8
+    },
+    {
+      "name": "chips-error-boundary",
+      "exportName": "ChipsErrorBoundary",
+      "sourceFile": "system-ux/ErrorBoundary.tsx",
+      "file": "error-boundary.css",
+      "interfacePoints": {
+        "scope": "chips-error-boundary",
+        "classSelectors": [
+          ".chips-error-boundary"
+        ],
+        "parts": [
+          "content",
+          "fallback",
+          "root"
+        ]
+      },
+      "requiredSelectors": [
+        ".chips-error-boundary",
+        "[data-scope=\"chips-error-boundary\"][data-part=\"root\"]",
+        "[data-scope=\"chips-error-boundary\"] [data-part=\"content\"]",
+        "[data-scope=\"chips-error-boundary\"] [data-part=\"fallback\"]",
+        "[data-scope=\"chips-error-boundary\"][data-state=\"error\"]"
+      ],
+      "minVariableRefs": 6
+    },
+    {
+      "name": "chips-file-upload",
+      "exportName": "ChipsFileUpload",
+      "sourceFile": "data-form/ChipsFileUpload.tsx",
+      "file": "file-upload.css",
+      "interfacePoints": {
+        "scope": "chips-file-upload",
+        "classSelectors": [
+          ".chips-file-upload"
+        ],
+        "parts": [
+          "dropzone",
+          "input",
+          "root",
+          "status"
+        ]
+      },
+      "requiredSelectors": [
+        ".chips-file-upload",
+        "[data-scope=\"chips-file-upload\"][data-part=\"root\"]",
+        "[data-scope=\"chips-file-upload\"] [data-part=\"dropzone\"]",
+        "[data-scope=\"chips-file-upload\"] [data-part=\"input\"]"
+      ],
+      "minVariableRefs": 7
+    },
+    {
+      "name": "chips-form",
+      "exportName": "ChipsForm",
+      "sourceFile": "data-form/ChipsForm.tsx",
       "file": "form.css",
       "interfacePoints": {
-        "scope": "form",
+        "scope": "chips-form",
         "classSelectors": [
           ".chips-form"
         ],
@@ -242,120 +383,788 @@
       },
       "requiredSelectors": [
         ".chips-form",
-        "[data-scope=\"form\"][data-part=\"root\"]"
+        "[data-scope=\"chips-form\"][data-part=\"root\"]"
       ],
       "minVariableRefs": 5
     },
     {
-      "name": "chips-file-upload",
-      "exportName": "ChipsFileUpload",
-      "sourceFile": "ChipsFileUpload.tsx",
-      "file": "file-upload.css",
+      "name": "chips-form-field",
+      "exportName": "ChipsFormField",
+      "sourceFile": "data-form/ChipsFormField.tsx",
+      "file": "form-field.css",
       "interfacePoints": {
-        "scope": "file-upload",
+        "scope": "chips-form-field",
         "classSelectors": [
-          ".chips-file-upload",
-          ".chips-file-upload__dropzone",
-          ".chips-file-upload__input",
-          ".chips-file-upload__meta"
+          ".chips-form-field"
         ],
         "parts": [
-          "root",
-          "dropzone",
-          "input",
-          "meta"
+          "error",
+          "helper",
+          "label",
+          "root"
         ]
       },
       "requiredSelectors": [
-        ".chips-file-upload",
-        "[data-scope=\"file-upload\"][data-part=\"root\"]",
-        "[data-scope=\"file-upload\"] [data-part=\"dropzone\"]",
-        "[data-scope=\"file-upload\"] [data-part=\"input\"]",
-        "[data-scope=\"file-upload\"][data-state=\"dragging\"] [data-part=\"dropzone\"]"
+        ".chips-form-field",
+        "[data-scope=\"chips-form-field\"][data-part=\"root\"]",
+        "[data-scope=\"chips-form-field\"] [data-part=\"error\"]",
+        "[data-scope=\"chips-form-field\"] [data-part=\"helper\"]"
       ],
-      "minVariableRefs": 8
+      "minVariableRefs": 7
     },
     {
-      "name": "image-viewer-shell",
-      "exportName": "ImageViewerShell",
-      "sourceFile": "ImageViewerShell.tsx",
-      "file": "image-viewer-shell.css",
+      "name": "chips-form-group",
+      "exportName": "ChipsFormGroup",
+      "sourceFile": "data-form/ChipsFormGroup.tsx",
+      "file": "form-group.css",
       "interfacePoints": {
-        "scope": "image-viewer-shell",
+        "scope": "chips-form-group",
         "classSelectors": [
-          ".chips-image-viewer-shell",
-          ".chips-image-viewer-shell-stage",
-          ".chips-image-viewer-shell-image",
-          ".chips-image-viewer-shell-close"
+          ".chips-form-group"
         ],
         "parts": [
-          "overlay",
-          "stage",
+          "content",
+          "description",
+          "legend",
+          "root"
+        ]
+      },
+      "requiredSelectors": [
+        ".chips-form-group",
+        "[data-scope=\"chips-form-group\"][data-part=\"root\"]",
+        "[data-scope=\"chips-form-group\"] [data-part=\"content\"]",
+        "[data-scope=\"chips-form-group\"] [data-part=\"description\"]"
+      ],
+      "minVariableRefs": 7
+    },
+    {
+      "name": "chips-grid",
+      "exportName": "ChipsGrid",
+      "sourceFile": "primitive/ChipsGrid.tsx",
+      "file": "grid.css",
+      "interfacePoints": {
+        "scope": "chips-grid",
+        "classSelectors": [
+          ".chips-grid"
+        ],
+        "parts": []
+      },
+      "requiredSelectors": [
+        ".chips-grid",
+        "[data-scope=\"chips-grid\"]"
+      ],
+      "minVariableRefs": 5
+    },
+    {
+      "name": "chips-image-viewer-shell",
+      "exportName": "ChipsImageViewerShell",
+      "sourceFile": "media-content/ChipsImageViewerShell.tsx",
+      "file": "image-viewer-shell.css",
+      "interfacePoints": {
+        "scope": "chips-image-viewer-shell",
+        "classSelectors": [
+          ".chips-image-viewer-shell",
+          ".chips-image-viewer-shell-close",
+          ".chips-image-viewer-shell-image",
+          ".chips-image-viewer-shell-retry",
+          ".chips-image-viewer-shell-stage"
+        ],
+        "parts": [
+          "actions",
+          "close",
+          "fallback",
           "image",
-          "close"
+          "overlay",
+          "placeholder",
+          "retry",
+          "stage"
         ]
       },
       "requiredSelectors": [
         ".chips-image-viewer-shell",
-        "[data-scope=\"image-viewer-shell\"][data-part=\"overlay\"]",
-        "[data-scope=\"image-viewer-shell\"][data-part=\"stage\"]",
-        "[data-scope=\"image-viewer-shell\"][data-part=\"image\"]",
-        "[data-scope=\"image-viewer-shell\"][data-part=\"close\"]"
+        "[data-scope=\"chips-image-viewer-shell\"]",
+        "[data-scope=\"chips-image-viewer-shell\"] [data-part=\"actions\"]",
+        "[data-scope=\"chips-image-viewer-shell\"] [data-part=\"close\"]"
       ],
       "minVariableRefs": 8
     },
     {
-      "name": "menu",
-      "exportName": "Menu",
-      "sourceFile": "Menu.tsx",
-      "file": "menu.css",
+      "name": "chips-inline",
+      "exportName": "ChipsInline",
+      "sourceFile": "primitive/ChipsInline.tsx",
+      "file": "inline.css",
       "interfacePoints": {
-        "scope": "menu",
+        "scope": "chips-inline",
         "classSelectors": [
-          ".chips-menu"
+          ".chips-inline"
+        ],
+        "parts": []
+      },
+      "requiredSelectors": [
+        ".chips-inline",
+        "[data-scope=\"chips-inline\"]"
+      ],
+      "minVariableRefs": 5
+    },
+    {
+      "name": "chips-input",
+      "exportName": "ChipsInput",
+      "sourceFile": "base-interactive/Input.tsx",
+      "file": "input.css",
+      "interfacePoints": {
+        "scope": "chips-input",
+        "classSelectors": [
+          ".chips-input"
         ],
         "parts": [
-          "trigger",
-          "content",
-          "item",
-          "item-text"
+          "control",
+          "error",
+          "helper",
+          "label",
+          "root"
         ]
       },
       "requiredSelectors": [
-        ".chips-menu",
-        "[data-scope=\"menu\"][data-part=\"content\"]",
-        "[data-scope=\"menu\"] [data-part=\"item\"]",
-        "[data-scope=\"menu\"] [data-part=\"item\"]:hover",
-        "[data-scope=\"menu\"] [data-part=\"item-text\"]"
+        ".chips-input",
+        "[data-scope=\"chips-input\"][data-part=\"root\"]",
+        "[data-scope=\"chips-input\"] [data-part=\"control\"]",
+        "[data-scope=\"chips-input\"] [data-part=\"error\"]"
+      ],
+      "minVariableRefs": 8
+    },
+    {
+      "name": "chips-workbench-inspector",
+      "exportName": "ChipsInspector",
+      "sourceFile": "workbench/ChipsInspector.tsx",
+      "file": "workbench-inspector.css",
+      "interfacePoints": {
+        "scope": "chips-workbench-inspector",
+        "classSelectors": [
+          ".chips-workbench-inspector"
+        ],
+        "parts": [
+          "root",
+          "section",
+          "section-content",
+          "section-trigger"
+        ]
+      },
+      "requiredSelectors": [
+        ".chips-workbench-inspector",
+        "[data-scope=\"chips-workbench-inspector\"][data-part=\"root\"]",
+        "[data-scope=\"chips-workbench-inspector\"] [data-part=\"section\"]",
+        "[data-scope=\"chips-workbench-inspector\"] [data-part=\"section-content\"]"
       ],
       "minVariableRefs": 7
     },
     {
-      "name": "radio-group",
-      "exportName": "RadioGroup",
-      "sourceFile": "RadioGroup.tsx",
+      "name": "chips-loading-boundary",
+      "exportName": "ChipsLoadingBoundary",
+      "sourceFile": "system-ux/LoadingBoundary.tsx",
+      "file": "loading-boundary.css",
+      "interfacePoints": {
+        "scope": "chips-loading-boundary",
+        "classSelectors": [
+          ".chips-loading-boundary"
+        ],
+        "parts": [
+          "content",
+          "error",
+          "loading",
+          "root"
+        ]
+      },
+      "requiredSelectors": [
+        ".chips-loading-boundary",
+        "[data-scope=\"chips-loading-boundary\"][data-part=\"root\"]",
+        "[data-scope=\"chips-loading-boundary\"] [data-part=\"content\"]",
+        "[data-scope=\"chips-loading-boundary\"] [data-part=\"error\"]",
+        "[data-scope=\"chips-loading-boundary\"][data-state=\"error\"]"
+      ],
+      "minVariableRefs": 7
+    },
+    {
+      "name": "chips-markdown-content",
+      "exportName": "ChipsMarkdownContent",
+      "sourceFile": "media-content/ChipsMarkdownContent.tsx",
+      "file": "markdown-content.css",
+      "interfacePoints": {
+        "scope": "chips-markdown-content",
+        "classSelectors": [
+          ".chips-markdown-content",
+          ".chips-markdown-content-retry"
+        ],
+        "parts": [
+          "blockquote",
+          "empty",
+          "fallback",
+          "list-item",
+          "ordered-list",
+          "paragraph",
+          "placeholder",
+          "retry",
+          "root",
+          "rule",
+          "unordered-list"
+        ]
+      },
+      "requiredSelectors": [
+        ".chips-markdown-content",
+        "[data-scope=\"chips-markdown-content\"][data-part=\"root\"]",
+        "[data-scope=\"chips-markdown-content\"] [data-part=\"blockquote\"]",
+        "[data-scope=\"chips-markdown-content\"] [data-part=\"empty\"]"
+      ],
+      "minVariableRefs": 8
+    },
+    {
+      "name": "chips-media-frame",
+      "exportName": "ChipsMediaFrame",
+      "sourceFile": "media-content/ChipsMediaFrame.tsx",
+      "file": "media-frame.css",
+      "interfacePoints": {
+        "scope": "chips-media-frame",
+        "classSelectors": [
+          ".chips-media-frame",
+          ".chips-media-frame-body",
+          ".chips-media-frame-footer",
+          ".chips-media-frame-header",
+          ".chips-media-frame-retry"
+        ],
+        "parts": [
+          "actions",
+          "body",
+          "description",
+          "empty",
+          "fallback",
+          "footer",
+          "header",
+          "heading",
+          "placeholder",
+          "retry",
+          "root",
+          "title"
+        ]
+      },
+      "requiredSelectors": [
+        ".chips-media-frame",
+        "[data-scope=\"chips-media-frame\"][data-part=\"root\"]",
+        "[data-scope=\"chips-media-frame\"] [data-part=\"actions\"]",
+        "[data-scope=\"chips-media-frame\"] [data-part=\"body\"]"
+      ],
+      "minVariableRefs": 8
+    },
+    {
+      "name": "chips-menu",
+      "exportName": "ChipsMenu",
+      "sourceFile": "base-interactive/Menu.tsx",
+      "file": "menu.css",
+      "interfacePoints": {
+        "scope": "chips-menu",
+        "classSelectors": [
+          ".chips-menu"
+        ],
+        "parts": [
+          "content",
+          "item",
+          "item-text",
+          "positioner",
+          "root",
+          "trigger"
+        ]
+      },
+      "requiredSelectors": [
+        ".chips-menu",
+        "[data-scope=\"chips-menu\"][data-part=\"root\"]",
+        "[data-scope=\"chips-menu\"] [data-part=\"content\"]",
+        "[data-scope=\"chips-menu\"] [data-part=\"item\"]"
+      ],
+      "minVariableRefs": 8
+    },
+    {
+      "name": "chips-notification",
+      "exportName": "ChipsNotification",
+      "sourceFile": "system-ux/Notification.tsx",
+      "file": "notification.css",
+      "interfacePoints": {
+        "scope": "chips-notification",
+        "classSelectors": [
+          ".chips-notification"
+        ],
+        "parts": [
+          "action",
+          "actions",
+          "dismiss",
+          "item",
+          "message",
+          "root",
+          "title"
+        ]
+      },
+      "requiredSelectors": [
+        ".chips-notification",
+        "[data-scope=\"chips-notification\"][data-part=\"root\"]",
+        "[data-scope=\"chips-notification\"] [data-part=\"action\"]",
+        "[data-scope=\"chips-notification\"] [data-part=\"actions\"]"
+      ],
+      "minVariableRefs": 8
+    },
+    {
+      "name": "chips-workbench-panel-header",
+      "exportName": "ChipsPanelHeader",
+      "sourceFile": "workbench/ChipsPanelHeader.tsx",
+      "file": "workbench-panel-header.css",
+      "interfacePoints": {
+        "scope": "chips-workbench-panel-header",
+        "classSelectors": [
+          ".chips-workbench-panel-header"
+        ],
+        "parts": [
+          "actions",
+          "back",
+          "content",
+          "leading",
+          "root",
+          "subtitle",
+          "title"
+        ]
+      },
+      "requiredSelectors": [
+        ".chips-workbench-panel-header",
+        "[data-scope=\"chips-workbench-panel-header\"][data-part=\"root\"]",
+        "[data-scope=\"chips-workbench-panel-header\"] [data-part=\"actions\"]",
+        "[data-scope=\"chips-workbench-panel-header\"] [data-part=\"back\"]"
+      ],
+      "minVariableRefs": 8
+    },
+    {
+      "name": "chips-popover",
+      "exportName": "ChipsPopover",
+      "sourceFile": "base-interactive/Popover.tsx",
+      "file": "popover.css",
+      "interfacePoints": {
+        "scope": "chips-popover",
+        "classSelectors": [
+          ".chips-popover"
+        ],
+        "parts": [
+          "content",
+          "root",
+          "trigger"
+        ]
+      },
+      "requiredSelectors": [
+        ".chips-popover",
+        "[data-scope=\"chips-popover\"][data-part=\"root\"]",
+        "[data-scope=\"chips-popover\"] [data-part=\"content\"]",
+        "[data-scope=\"chips-popover\"] [data-part=\"trigger\"]"
+      ],
+      "minVariableRefs": 6
+    },
+    {
+      "name": "chips-radio-group",
+      "exportName": "ChipsRadioGroup",
+      "sourceFile": "base-interactive/RadioGroup.tsx",
       "file": "radio-group.css",
       "interfacePoints": {
-        "scope": "radio-group",
+        "scope": "chips-radio-group",
         "classSelectors": [
           ".chips-radio-group"
         ],
         "parts": [
-          "root",
-          "item",
           "control",
           "indicator",
-          "label"
+          "indicator-icon",
+          "item",
+          "label",
+          "root"
         ]
       },
       "requiredSelectors": [
         ".chips-radio-group",
-        "[data-scope=\"radio-group\"][data-part=\"root\"]",
-        "[data-scope=\"radio-group\"] [data-part=\"item\"]",
-        "[data-scope=\"radio-group\"] [data-part=\"control\"]",
-        "[data-scope=\"radio-group\"] [data-part=\"indicator\"]"
+        "[data-scope=\"chips-radio-group\"][data-part=\"root\"]",
+        "[data-scope=\"chips-radio-group\"] [data-part=\"control\"]",
+        "[data-scope=\"chips-radio-group\"] [data-part=\"indicator\"]"
+      ],
+      "minVariableRefs": 8
+    },
+    {
+      "name": "chips-scroll-area",
+      "exportName": "ChipsScrollArea",
+      "sourceFile": "primitive/ChipsScrollArea.tsx",
+      "file": "scroll-area.css",
+      "interfacePoints": {
+        "scope": "chips-scroll-area",
+        "classSelectors": [
+          ".chips-scroll-area"
+        ],
+        "parts": [
+          "viewport"
+        ]
+      },
+      "requiredSelectors": [
+        ".chips-scroll-area",
+        "[data-scope=\"chips-scroll-area\"]",
+        "[data-scope=\"chips-scroll-area\"] [data-part=\"viewport\"]"
+      ],
+      "minVariableRefs": 5
+    },
+    {
+      "name": "chips-select",
+      "exportName": "ChipsSelect",
+      "sourceFile": "base-interactive/Select.tsx",
+      "file": "select.css",
+      "interfacePoints": {
+        "scope": "chips-select",
+        "classSelectors": [
+          ".chips-select"
+        ],
+        "parts": [
+          "content",
+          "control",
+          "indicator",
+          "indicator-icon",
+          "item",
+          "item-indicator",
+          "item-indicator-icon",
+          "item-text",
+          "label",
+          "root",
+          "trigger",
+          "value"
+        ]
+      },
+      "requiredSelectors": [
+        ".chips-select",
+        "[data-scope=\"chips-select\"][data-part=\"root\"]",
+        "[data-scope=\"chips-select\"] [data-part=\"content\"]",
+        "[data-scope=\"chips-select\"] [data-part=\"control\"]"
+      ],
+      "minVariableRefs": 8
+    },
+    {
+      "name": "chips-separator",
+      "exportName": "ChipsSeparator",
+      "sourceFile": "primitive/ChipsSeparator.tsx",
+      "file": "separator.css",
+      "interfacePoints": {
+        "scope": "chips-separator",
+        "classSelectors": [
+          ".chips-separator"
+        ],
+        "parts": []
+      },
+      "requiredSelectors": [
+        ".chips-separator",
+        "[data-scope=\"chips-separator\"]"
+      ],
+      "minVariableRefs": 5
+    },
+    {
+      "name": "chips-skeleton",
+      "exportName": "ChipsSkeleton",
+      "sourceFile": "system-ux/Skeleton.tsx",
+      "file": "skeleton.css",
+      "interfacePoints": {
+        "scope": "chips-skeleton",
+        "classSelectors": [
+          ".chips-skeleton"
+        ],
+        "parts": [
+          "item",
+          "root"
+        ]
+      },
+      "requiredSelectors": [
+        ".chips-skeleton",
+        "[data-scope=\"chips-skeleton\"][data-part=\"root\"]",
+        "[data-scope=\"chips-skeleton\"] [data-part=\"item\"]"
+      ],
+      "minVariableRefs": 5
+    },
+    {
+      "name": "chips-spacer",
+      "exportName": "ChipsSpacer",
+      "sourceFile": "primitive/ChipsSpacer.tsx",
+      "file": "spacer.css",
+      "interfacePoints": {
+        "scope": "chips-spacer",
+        "classSelectors": [
+          ".chips-spacer"
+        ],
+        "parts": []
+      },
+      "requiredSelectors": [
+        ".chips-spacer",
+        "[data-scope=\"chips-spacer\"]"
+      ],
+      "minVariableRefs": 5
+    },
+    {
+      "name": "chips-workbench-split-pane",
+      "exportName": "ChipsSplitPane",
+      "sourceFile": "workbench/ChipsSplitPane.tsx",
+      "file": "workbench-split-pane.css",
+      "interfacePoints": {
+        "scope": "chips-workbench-split-pane",
+        "classSelectors": [
+          ".chips-workbench-split-pane"
+        ],
+        "parts": [
+          "divider",
+          "pane",
+          "root"
+        ]
+      },
+      "requiredSelectors": [
+        ".chips-workbench-split-pane",
+        "[data-scope=\"chips-workbench-split-pane\"][data-part=\"root\"]",
+        "[data-scope=\"chips-workbench-split-pane\"] [data-part=\"divider\"]",
+        "[data-scope=\"chips-workbench-split-pane\"] [data-part=\"pane\"]"
+      ],
+      "minVariableRefs": 6
+    },
+    {
+      "name": "chips-stack",
+      "exportName": "ChipsStack",
+      "sourceFile": "primitive/ChipsStack.tsx",
+      "file": "stack.css",
+      "interfacePoints": {
+        "scope": "chips-stack",
+        "classSelectors": [
+          ".chips-stack"
+        ],
+        "parts": []
+      },
+      "requiredSelectors": [
+        ".chips-stack",
+        "[data-scope=\"chips-stack\"]"
+      ],
+      "minVariableRefs": 5
+    },
+    {
+      "name": "chips-switch",
+      "exportName": "ChipsSwitch",
+      "sourceFile": "base-interactive/Switch.tsx",
+      "file": "switch.css",
+      "interfacePoints": {
+        "scope": "chips-switch",
+        "classSelectors": [
+          ".chips-switch"
+        ],
+        "parts": [
+          "control",
+          "label",
+          "root",
+          "thumb"
+        ]
+      },
+      "requiredSelectors": [
+        ".chips-switch",
+        "[data-scope=\"chips-switch\"][data-part=\"root\"]",
+        "[data-scope=\"chips-switch\"] [data-part=\"control\"]",
+        "[data-scope=\"chips-switch\"] [data-part=\"label\"]"
       ],
       "minVariableRefs": 7
+    },
+    {
+      "name": "chips-tabs",
+      "exportName": "ChipsTabs",
+      "sourceFile": "base-interactive/Tabs.tsx",
+      "file": "tabs.css",
+      "interfacePoints": {
+        "scope": "chips-tabs",
+        "classSelectors": [
+          ".chips-tabs"
+        ],
+        "parts": [
+          "content",
+          "indicator",
+          "list",
+          "root",
+          "trigger"
+        ]
+      },
+      "requiredSelectors": [
+        ".chips-tabs",
+        "[data-scope=\"chips-tabs\"][data-part=\"root\"]",
+        "[data-scope=\"chips-tabs\"] [data-part=\"content\"]",
+        "[data-scope=\"chips-tabs\"] [data-part=\"indicator\"]"
+      ],
+      "minVariableRefs": 8
+    },
+    {
+      "name": "chips-textarea",
+      "exportName": "ChipsTextarea",
+      "sourceFile": "data-form/ChipsTextarea.tsx",
+      "file": "textarea.css",
+      "interfacePoints": {
+        "scope": "chips-textarea",
+        "classSelectors": [
+          ".chips-textarea"
+        ],
+        "parts": [
+          "control"
+        ]
+      },
+      "requiredSelectors": [
+        ".chips-textarea",
+        "[data-scope=\"chips-textarea\"]",
+        "[data-scope=\"chips-textarea\"] [data-part=\"control\"]"
+      ],
+      "minVariableRefs": 5
+    },
+    {
+      "name": "chips-toast",
+      "exportName": "ChipsToast",
+      "sourceFile": "system-ux/Toast.tsx",
+      "file": "toast.css",
+      "interfacePoints": {
+        "scope": "chips-toast",
+        "classSelectors": [
+          ".chips-toast"
+        ],
+        "parts": [
+          "action",
+          "dismiss",
+          "message",
+          "root",
+          "title"
+        ]
+      },
+      "requiredSelectors": [
+        ".chips-toast",
+        "[data-scope=\"chips-toast\"][data-part=\"root\"]",
+        "[data-scope=\"chips-toast\"] [data-part=\"action\"]",
+        "[data-scope=\"chips-toast\"] [data-part=\"dismiss\"]"
+      ],
+      "minVariableRefs": 8
+    },
+    {
+      "name": "chips-workbench-tool-window",
+      "exportName": "ChipsToolWindow",
+      "sourceFile": "workbench/ChipsToolWindow.tsx",
+      "file": "workbench-tool-window.css",
+      "interfacePoints": {
+        "scope": "chips-workbench-tool-window",
+        "classSelectors": [
+          ".chips-workbench-tool-window"
+        ],
+        "parts": [
+          "actions",
+          "body",
+          "close",
+          "header",
+          "pin",
+          "root",
+          "title"
+        ]
+      },
+      "requiredSelectors": [
+        ".chips-workbench-tool-window",
+        "[data-scope=\"chips-workbench-tool-window\"][data-part=\"root\"]",
+        "[data-scope=\"chips-workbench-tool-window\"] [data-part=\"actions\"]",
+        "[data-scope=\"chips-workbench-tool-window\"] [data-part=\"body\"]"
+      ],
+      "minVariableRefs": 8
+    },
+    {
+      "name": "chips-tooltip",
+      "exportName": "ChipsTooltip",
+      "sourceFile": "base-interactive/Tooltip.tsx",
+      "file": "tooltip.css",
+      "interfacePoints": {
+        "scope": "chips-tooltip",
+        "classSelectors": [
+          ".chips-tooltip"
+        ],
+        "parts": [
+          "content",
+          "root",
+          "trigger"
+        ]
+      },
+      "requiredSelectors": [
+        ".chips-tooltip",
+        "[data-scope=\"chips-tooltip\"][data-part=\"root\"]",
+        "[data-scope=\"chips-tooltip\"] [data-part=\"content\"]",
+        "[data-scope=\"chips-tooltip\"] [data-part=\"trigger\"]"
+      ],
+      "minVariableRefs": 6
+    },
+    {
+      "name": "chips-tree",
+      "exportName": "ChipsTree",
+      "sourceFile": "data-form/ChipsTree.tsx",
+      "file": "tree.css",
+      "interfacePoints": {
+        "scope": "chips-tree",
+        "classSelectors": [
+          ".chips-tree"
+        ],
+        "parts": [
+          "empty",
+          "item",
+          "label",
+          "root",
+          "spacer-bottom",
+          "spacer-top",
+          "toggle",
+          "toggle-indicator",
+          "viewport"
+        ]
+      },
+      "requiredSelectors": [
+        ".chips-tree",
+        "[data-scope=\"chips-tree\"][data-part=\"root\"]",
+        "[data-scope=\"chips-tree\"] [data-part=\"empty\"]",
+        "[data-scope=\"chips-tree\"] [data-part=\"item\"]"
+      ],
+      "minVariableRefs": 8
+    },
+    {
+      "name": "chips-view",
+      "exportName": "ChipsView",
+      "sourceFile": "primitive/ChipsView.tsx",
+      "file": "view.css",
+      "interfacePoints": {
+        "scope": "chips-view",
+        "classSelectors": [
+          ".chips-view"
+        ],
+        "parts": []
+      },
+      "requiredSelectors": [
+        ".chips-view",
+        "[data-scope=\"chips-view\"]"
+      ],
+      "minVariableRefs": 5
+    },
+    {
+      "name": "chips-virtual-list",
+      "exportName": "ChipsVirtualList",
+      "sourceFile": "data-form/ChipsVirtualList.tsx",
+      "file": "virtual-list.css",
+      "interfacePoints": {
+        "scope": "chips-virtual-list",
+        "classSelectors": [
+          ".chips-virtual-list"
+        ],
+        "parts": [
+          "empty",
+          "item",
+          "root",
+          "spacer-bottom",
+          "spacer-top",
+          "viewport"
+        ]
+      },
+      "requiredSelectors": [
+        ".chips-virtual-list",
+        "[data-scope=\"chips-virtual-list\"][data-part=\"root\"]",
+        "[data-scope=\"chips-virtual-list\"] [data-part=\"empty\"]",
+        "[data-scope=\"chips-virtual-list\"] [data-part=\"item\"]"
+      ],
+      "minVariableRefs": 8
     }
   ]
 }

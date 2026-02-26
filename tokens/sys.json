@@ -1,0 +1,168 @@
+{
+  "chips": {
+    "sys": {
+      "color": {
+        "surface": {
+          "value": "{chips.ref.color.neutral.100}",
+          "type": "color"
+        },
+        "surface-muted": {
+          "value": "{chips.ref.color.neutral.200}",
+          "type": "color"
+        },
+        "surface-raised": {
+          "value": "{chips.ref.color.neutral.300}",
+          "type": "color"
+        },
+        "text-primary": {
+          "value": "{chips.ref.color.neutral.900}",
+          "type": "color"
+        },
+        "text-secondary": {
+          "value": "{chips.ref.color.neutral.700}",
+          "type": "color"
+        },
+        "text-muted": {
+          "value": "{chips.ref.color.neutral.500}",
+          "type": "color"
+        },
+        "border-default": {
+          "value": "{chips.ref.color.neutral.400}",
+          "type": "color"
+        },
+        "border-strong": {
+          "value": "{chips.ref.color.neutral.500}",
+          "type": "color"
+        },
+        "border-focus": {
+          "value": "{chips.ref.color.brand.500}",
+          "type": "color"
+        },
+        "state-focus": {
+          "value": "rgba(121, 133, 232, 0.24)",
+          "type": "color"
+        },
+        "state-active": {
+          "value": "rgba(121, 133, 232, 0.16)",
+          "type": "color"
+        },
+        "state-disabled": {
+          "value": "{chips.ref.color.neutral.200}",
+          "type": "color"
+        },
+        "brand": {
+          "value": "{chips.ref.color.brand.500}",
+          "type": "color"
+        },
+        "brand-hover": {
+          "value": "{chips.ref.color.brand.600}",
+          "type": "color"
+        },
+        "brand-active": {
+          "value": "{chips.ref.color.brand.400}",
+          "type": "color"
+        },
+        "success": {
+          "value": "{chips.ref.color.success.500}",
+          "type": "color"
+        },
+        "warning": {
+          "value": "{chips.ref.color.warning.500}",
+          "type": "color"
+        },
+        "danger": {
+          "value": "{chips.ref.color.danger.500}",
+          "type": "color"
+        }
+      },
+      "font": {
+        "family": {
+          "ui": {
+            "value": "{chips.ref.font.family.ui}",
+            "type": "fontFamily"
+          },
+          "mono": {
+            "value": "{chips.ref.font.family.mono}",
+            "type": "fontFamily"
+          }
+        },
+        "size": {
+          "xs": {
+            "value": "{chips.ref.font.size.xs}",
+            "type": "fontSize"
+          },
+          "sm": {
+            "value": "{chips.ref.font.size.sm}",
+            "type": "fontSize"
+          },
+          "md": {
+            "value": "{chips.ref.font.size.md}",
+            "type": "fontSize"
+          },
+          "lg": {
+            "value": "{chips.ref.font.size.lg}",
+            "type": "fontSize"
+          },
+          "xl": {
+            "value": "{chips.ref.font.size.xl}",
+            "type": "fontSize"
+          }
+        },
+        "weight": {
+          "regular": {
+            "value": "{chips.ref.font.weight.regular}",
+            "type": "fontWeight"
+          },
+          "medium": {
+            "value": "{chips.ref.font.weight.medium}",
+            "type": "fontWeight"
+          },
+          "semibold": {
+            "value": "{chips.ref.font.weight.semibold}",
+            "type": "fontWeight"
+          },
+          "bold": {
+            "value": "{chips.ref.font.weight.bold}",
+            "type": "fontWeight"
+          }
+        },
+        "lineHeight": {
+          "tight": {
+            "value": "{chips.ref.font.lineHeight.tight}",
+            "type": "lineHeight"
+          },
+          "normal": {
+            "value": "{chips.ref.font.lineHeight.normal}",
+            "type": "lineHeight"
+          },
+          "relaxed": {
+            "value": "{chips.ref.font.lineHeight.relaxed}",
+            "type": "lineHeight"
+          }
+        }
+      },
+      "icon": {
+        "fill": {
+          "value": "{chips.ref.icon.fill}",
+          "type": "number"
+        },
+        "weight": {
+          "value": "{chips.ref.icon.weight}",
+          "type": "number"
+        },
+        "grade": {
+          "value": "{chips.ref.icon.grade}",
+          "type": "number"
+        },
+        "opticalSize": {
+          "value": "{chips.ref.icon.opticalSize}",
+          "type": "number"
+        },
+        "size": {
+          "value": "{chips.ref.icon.size}",
+          "type": "dimension"
+        }
+      }
+    }
+  }
+}

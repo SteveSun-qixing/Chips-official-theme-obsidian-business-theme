@@ -1,29 +1,28 @@
-# Chips Official Theme: Obsidian Business Night
+# Chips Official Theme: Obsidian Business
 
-薯片生态官方主题包，定位为“暗夜 + 商务质感”视觉风格，面向夜间长时间使用场景。
+薯片生态官方 Obsidian 主题包，定位为单语义的深色商务视觉方案。
 
 ## 特性
 
-- Obsidian 深色基底与蓝金商务点缀
-- 覆盖当前组件库 13 个无头组件接口点（class + data-part + data-scope）
-- 主题契约驱动测试（接口命中、变量引用、占位清理）
-- Style Dictionary Token 构建链路
-- 可直接通过 `chipsd validate` 与 `chipsd pack`
+- 与组件库冻结合同同步，覆盖 45 个可主题化组件接口点
+- Token 体系收敛为 `ref/sys/comp/motion/layout` 五层
+- 字体 token 冻结字段：`font.family.*`、`font.size.*`、`font.weight.*`、`font.lineHeight.*`
+- 图标轴 token 冻结字段：`icon.fill/icon.weight/icon.grade/icon.opticalSize/icon.size`
+- 主题清单采用单语义口径，`theme` 节点仅保留 `tokensVersion` 与 `inherits`
 
 ## 主题标识
 
 - 仓库：`Chips-official-theme-obsidian-business-theme`
 - 主题 ID：`chips-official.obsidian-business-theme`
 - 默认继承：`chips-official.default-theme`
-- 主题模式：`darkMode: true`
 
 ## 开发命令
 
 ```bash
 pnpm install
+pnpm build
 pnpm test
 pnpm validate
-pnpm build
 chipsd validate
 chipsd pack
 ```
@@ -40,5 +39,9 @@ Chips-official-theme-obsidian-business-theme/
 ├── animations/
 ├── contracts/
 ├── scripts/
-└── tests/
+├── tests/
+└── archive/
 ```
+
+- `archive/legacy-components/`：归档的历史组件样式（已退出主路径）
+- `archive/legacy-tokens/`：归档的历史 token 文件（已退出主路径）
