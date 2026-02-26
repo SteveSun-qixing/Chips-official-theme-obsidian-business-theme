@@ -7,19 +7,48 @@ import { readThemeContract } from './theme-contract.utils';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const componentLibraryContractPath = path.resolve(
-  __dirname,
-  '..',
-  '..',
-  'Chips-ComponentLibrary',
-  'packages',
-  'component-library',
-  'contracts',
-  'theme-interface-points.contract.json'
-);
+const componentLibraryContractPathCandidates = [
+  path.resolve(
+    __dirname,
+    '..',
+    '..',
+    'Chips-ComponentLibrary',
+    'packages',
+    'component-library',
+    'contracts',
+    'theme-interface-points.contract.json'
+  ),
+  path.resolve(
+    __dirname,
+    '..',
+    '..',
+    '..',
+    'Chips-ComponentLibrary',
+    'packages',
+    'component-library',
+    'contracts',
+    'theme-interface-points.contract.json'
+  ),
+  path.resolve(
+    __dirname,
+    '..',
+    '..',
+    '..',
+    '..',
+    'Chips-ComponentLibrary',
+    'packages',
+    'component-library',
+    'contracts',
+    'theme-interface-points.contract.json'
+  )
+];
+
+const componentLibraryContractPath =
+  componentLibraryContractPathCandidates.find((candidate) => fs.existsSync(candidate)) ??
+  componentLibraryContractPathCandidates[0];
 
 describe('Theme Contract Sync', () => {
-  it('should stay aligned with the component-library interface contract source', () => {
+  it('stays aligned with the component-library contract source', () => {
     expect(fs.existsSync(componentLibraryContractPath), 'component-library contract source should exist').toBe(true);
 
     const componentLibraryContract = JSON.parse(
@@ -34,6 +63,8 @@ describe('Theme Contract Sync', () => {
         sourceFile: component.sourceFile,
         file: component.file,
         interfacePoints: component.interfacePoints,
+        requiredSelectors: component.requiredSelectors,
+        minVariableRefs: component.minVariableRefs,
       }));
 
     expect(normalize(themeContract)).toEqual(normalize(componentLibraryContract));

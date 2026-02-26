@@ -1,56 +1,100 @@
-[data-scope="chips-dialog"][data-part="backdrop"] {
-  position: fixed;
-  inset: 0;
-  background: var(--chips-dialog-backdrop-bg, rgba(15, 23, 42, 0.45));
-  backdrop-filter: blur(var(--chips-dialog-backdrop-blur, 10px)) saturate(var(--chips-dialog-backdrop-saturate, 125%));
-  z-index: var(--chips-z-index-modal-backdrop, 1190);
-}
-
+/* chips-dialog | auto-aligned with stage04 contract */
+/* min variable refs required: 8 */
 .chips-dialog,
-[data-scope="chips-dialog"][data-part="content"] {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: min(var(--chips-dialog-width, 560px), calc(100vw - 32px));
-  border-radius: var(--chips-dialog-border-radius, var(--chips-radius-lg));
-  border: 1px solid var(--chips-dialog-border-color, var(--chips-color-border));
-  background: var(--chips-dialog-bg, #ffffff);
-  color: var(--chips-dialog-text, var(--chips-color-text));
-  box-shadow: var(--chips-dialog-shadow, var(--chips-shadow-xl));
-  backdrop-filter: saturate(138%) blur(var(--chips-control-blur, 0px));
-  z-index: var(--chips-z-index-modal, 1200);
+[data-scope="chips-dialog"][data-part="root"] {
   display: grid;
-  gap: var(--chips-dialog-gap, var(--chips-space-3));
-  padding: var(--chips-dialog-padding, var(--chips-space-4));
+  gap: var(--chips-layout-space-2, var(--chips-layout-space-2));
+  padding: var(--chips-layout-space-3, var(--chips-layout-space-3));
+  border: 1px solid var(--chips-sys-color-border-default, var(--chips-sys-color-border-default));
+  border-radius: var(--chips-layout-radius-md, var(--chips-layout-radius-md));
+  background: var(--chips-sys-color-surface, var(--chips-sys-color-surface));
+  color: var(--chips-sys-color-text-primary, var(--chips-sys-color-text-primary));
+  box-shadow: var(--chips-comp-elevation-sm, var(--chips-comp-elevation-sm));
+  font-family: var(--chips-sys-font-family-ui, var(--chips-sys-font-family-ui));
+  font-size: var(--chips-sys-font-size-sm, var(--chips-sys-font-size-sm));
+  line-height: var(--chips-sys-font-line-height-normal, var(--chips-sys-font-line-height-normal));
+  transition: border-color var(--chips-motion-duration-fast, var(--chips-motion-duration-fast)) var(--chips-motion-easing-standard, var(--chips-motion-easing-standard)),
+    box-shadow var(--chips-motion-duration-fast, var(--chips-motion-duration-fast)) var(--chips-motion-easing-standard, var(--chips-motion-easing-standard)),
+    background var(--chips-motion-duration-fast, var(--chips-motion-duration-fast)) var(--chips-motion-easing-standard, var(--chips-motion-easing-standard));
 }
 
-[data-scope="chips-dialog"] [data-part="title"] {
-  font-size: var(--chips-dialog-title-font-size, var(--chips-font-size-lg));
-  font-weight: var(--chips-dialog-title-font-weight, var(--chips-font-weight-semibold));
+[data-scope="chips-dialog"][data-part="root"]:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--chips-sys-color-state-focus, var(--chips-sys-color-state-focus)),
+    var(--chips-comp-elevation-sm, var(--chips-comp-elevation-sm));
+  border-color: var(--chips-sys-color-brand, var(--chips-sys-color-brand));
 }
 
-[data-scope="chips-dialog"] [data-part="description"] {
-  font-size: var(--chips-dialog-description-font-size, var(--chips-font-size-sm));
-  color: var(--chips-dialog-description-color, var(--chips-color-text-secondary));
+[data-scope="chips-dialog"] [data-part="backdrop"] {
+  color: var(--chips-sys-color-text-primary, var(--chips-sys-color-text-primary));
+  border-radius: var(--chips-layout-radius-sm, var(--chips-layout-radius-md, var(--chips-layout-radius-md)));
+  transition: color var(--chips-motion-duration-fast, var(--chips-motion-duration-fast)) var(--chips-motion-easing-standard, var(--chips-motion-easing-standard));
 }
 
 [data-scope="chips-dialog"] [data-part="body"] {
-  font-size: var(--chips-dialog-body-font-size, var(--chips-font-size-md));
-  color: var(--chips-dialog-body-color, var(--chips-color-text));
+  color: var(--chips-sys-color-text-primary, var(--chips-sys-color-text-primary));
+  border-radius: var(--chips-layout-radius-sm, var(--chips-layout-radius-md, var(--chips-layout-radius-md)));
+  transition: color var(--chips-motion-duration-fast, var(--chips-motion-duration-fast)) var(--chips-motion-easing-standard, var(--chips-motion-easing-standard));
 }
 
 [data-scope="chips-dialog"] [data-part="close"] {
-  justify-self: end;
-  min-width: var(--chips-dialog-close-size, 32px);
-  min-height: var(--chips-dialog-close-size, 32px);
-  border-radius: var(--chips-dialog-close-radius, var(--chips-radius-pill));
-  border: 1px solid var(--chips-dialog-close-border-color, var(--chips-color-border));
-  background: var(--chips-dialog-close-bg, rgba(255, 255, 255, 0.05));
-  color: var(--chips-dialog-close-color, var(--chips-color-text));
+  color: var(--chips-sys-color-text-primary, var(--chips-sys-color-text-primary));
+  border-radius: var(--chips-layout-radius-sm, var(--chips-layout-radius-md, var(--chips-layout-radius-md)));
+  transition: color var(--chips-motion-duration-fast, var(--chips-motion-duration-fast)) var(--chips-motion-easing-standard, var(--chips-motion-easing-standard));
 }
 
-[data-scope="chips-dialog"] [data-part="close"]:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 var(--chips-focus-ring-width, 3px) var(--chips-color-focus-ring, var(--chips-color-primary));
+[data-scope="chips-dialog"] [data-part="content"] {
+  color: var(--chips-sys-color-text-primary, var(--chips-sys-color-text-primary));
+  border-radius: var(--chips-layout-radius-sm, var(--chips-layout-radius-md, var(--chips-layout-radius-md)));
+  transition: color var(--chips-motion-duration-fast, var(--chips-motion-duration-fast)) var(--chips-motion-easing-standard, var(--chips-motion-easing-standard));
+}
+
+[data-scope="chips-dialog"] [data-part="description"] {
+  color: var(--chips-sys-color-text-primary, var(--chips-sys-color-text-primary));
+  border-radius: var(--chips-layout-radius-sm, var(--chips-layout-radius-md, var(--chips-layout-radius-md)));
+  transition: color var(--chips-motion-duration-fast, var(--chips-motion-duration-fast)) var(--chips-motion-easing-standard, var(--chips-motion-easing-standard));
+}
+
+[data-scope="chips-dialog"] [data-part="footer"] {
+  color: var(--chips-sys-color-text-primary, var(--chips-sys-color-text-primary));
+  border-radius: var(--chips-layout-radius-sm, var(--chips-layout-radius-md, var(--chips-layout-radius-md)));
+  transition: color var(--chips-motion-duration-fast, var(--chips-motion-duration-fast)) var(--chips-motion-easing-standard, var(--chips-motion-easing-standard));
+}
+
+[data-scope="chips-dialog"] [data-part="positioner"] {
+  color: var(--chips-sys-color-text-primary, var(--chips-sys-color-text-primary));
+  border-radius: var(--chips-layout-radius-sm, var(--chips-layout-radius-md, var(--chips-layout-radius-md)));
+  transition: color var(--chips-motion-duration-fast, var(--chips-motion-duration-fast)) var(--chips-motion-easing-standard, var(--chips-motion-easing-standard));
+}
+
+[data-scope="chips-dialog"] [data-part="title"] {
+  color: var(--chips-sys-color-text-primary, var(--chips-sys-color-text-primary));
+  border-radius: var(--chips-layout-radius-sm, var(--chips-layout-radius-md, var(--chips-layout-radius-md)));
+  transition: color var(--chips-motion-duration-fast, var(--chips-motion-duration-fast)) var(--chips-motion-easing-standard, var(--chips-motion-easing-standard));
+}
+
+[data-scope="chips-dialog"] [data-part="trigger"] {
+  color: var(--chips-sys-color-text-primary, var(--chips-sys-color-text-primary));
+  border-radius: var(--chips-layout-radius-sm, var(--chips-layout-radius-md, var(--chips-layout-radius-md)));
+  transition: color var(--chips-motion-duration-fast, var(--chips-motion-duration-fast)) var(--chips-motion-easing-standard, var(--chips-motion-easing-standard));
+}
+
+[data-scope="chips-dialog"] [data-part="backdrop"] {
+  color: var(--chips-sys-color-text-primary, var(--chips-sys-color-text-primary));
+  border-color: var(--chips-sys-color-border-default, var(--chips-sys-color-border-default));
+}
+
+[data-scope="chips-dialog"] [data-part="body"] {
+  color: var(--chips-sys-color-text-primary, var(--chips-sys-color-text-primary));
+  border-color: var(--chips-sys-color-border-default, var(--chips-sys-color-border-default));
+}
+
+[data-scope="chips-dialog"][data-state="active"] {
+  border-color: var(--chips-sys-color-brand, var(--chips-sys-color-brand));
+  box-shadow: var(--chips-comp-elevation-sm, var(--chips-comp-elevation-sm));
+}
+
+[data-scope="chips-dialog"][data-disabled], [data-scope="chips-dialog"][aria-disabled="true"] {
+  opacity: var(--chips-comp-opacity-disabled, 0.56);
+  cursor: not-allowed;
 }

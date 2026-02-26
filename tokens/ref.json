@@ -1,0 +1,270 @@
+{
+  "chips": {
+    "ref": {
+      "color": {
+        "neutral": {
+          "50": {
+            "value": "#08090d",
+            "type": "color"
+          },
+          "100": {
+            "value": "#0f1219",
+            "type": "color"
+          },
+          "200": {
+            "value": "#171b25",
+            "type": "color"
+          },
+          "300": {
+            "value": "#222837",
+            "type": "color"
+          },
+          "400": {
+            "value": "#36405a",
+            "type": "color"
+          },
+          "500": {
+            "value": "#4f5b78",
+            "type": "color"
+          },
+          "700": {
+            "value": "#9aa7c4",
+            "type": "color"
+          },
+          "900": {
+            "value": "#e9edf8",
+            "type": "color"
+          }
+        },
+        "brand": {
+          "400": {
+            "value": "#5b67c9",
+            "type": "color"
+          },
+          "500": {
+            "value": "#7985e8",
+            "type": "color"
+          },
+          "600": {
+            "value": "#92a0ff",
+            "type": "color"
+          }
+        },
+        "success": {
+          "500": {
+            "value": "#35b98f",
+            "type": "color"
+          }
+        },
+        "warning": {
+          "500": {
+            "value": "#deab52",
+            "type": "color"
+          }
+        },
+        "danger": {
+          "500": {
+            "value": "#ef6f84",
+            "type": "color"
+          }
+        }
+      },
+      "font": {
+        "family": {
+          "ui": {
+            "value": "'Roboto Flex', 'Noto Sans SC', 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+            "type": "fontFamily"
+          },
+          "mono": {
+            "value": "'Noto Sans Mono', 'SF Mono', 'JetBrains Mono', Consolas, monospace",
+            "type": "fontFamily"
+          }
+        },
+        "size": {
+          "xs": {
+            "value": "12px",
+            "type": "fontSize"
+          },
+          "sm": {
+            "value": "14px",
+            "type": "fontSize"
+          },
+          "md": {
+            "value": "16px",
+            "type": "fontSize"
+          },
+          "lg": {
+            "value": "18px",
+            "type": "fontSize"
+          },
+          "xl": {
+            "value": "20px",
+            "type": "fontSize"
+          }
+        },
+        "weight": {
+          "regular": {
+            "value": "400",
+            "type": "fontWeight"
+          },
+          "medium": {
+            "value": "500",
+            "type": "fontWeight"
+          },
+          "semibold": {
+            "value": "600",
+            "type": "fontWeight"
+          },
+          "bold": {
+            "value": "700",
+            "type": "fontWeight"
+          }
+        },
+        "lineHeight": {
+          "tight": {
+            "value": "1.35",
+            "type": "lineHeight"
+          },
+          "normal": {
+            "value": "1.5",
+            "type": "lineHeight"
+          },
+          "relaxed": {
+            "value": "1.7",
+            "type": "lineHeight"
+          }
+        }
+      },
+      "space": {
+        "0": {
+          "value": "0",
+          "type": "spacing"
+        },
+        "1": {
+          "value": "4px",
+          "type": "spacing"
+        },
+        "2": {
+          "value": "8px",
+          "type": "spacing"
+        },
+        "3": {
+          "value": "12px",
+          "type": "spacing"
+        },
+        "4": {
+          "value": "16px",
+          "type": "spacing"
+        },
+        "5": {
+          "value": "20px",
+          "type": "spacing"
+        },
+        "6": {
+          "value": "24px",
+          "type": "spacing"
+        },
+        "8": {
+          "value": "32px",
+          "type": "spacing"
+        }
+      },
+      "radius": {
+        "sm": {
+          "value": "8px",
+          "type": "borderRadius"
+        },
+        "md": {
+          "value": "12px",
+          "type": "borderRadius"
+        },
+        "lg": {
+          "value": "16px",
+          "type": "borderRadius"
+        },
+        "pill": {
+          "value": "999px",
+          "type": "borderRadius"
+        }
+      },
+      "shadow": {
+        "sm": {
+          "value": "0 1px 2px rgba(3, 6, 12, 0.35)",
+          "type": "boxShadow"
+        },
+        "md": {
+          "value": "0 10px 28px rgba(3, 6, 12, 0.44)",
+          "type": "boxShadow"
+        },
+        "lg": {
+          "value": "0 20px 42px rgba(2, 4, 10, 0.52)",
+          "type": "boxShadow"
+        }
+      },
+      "opacity": {
+        "disabled": {
+          "value": "0.56",
+          "type": "opacity"
+        }
+      },
+      "breakpoint": {
+        "sm": {
+          "value": "640px",
+          "type": "other"
+        },
+        "md": {
+          "value": "768px",
+          "type": "other"
+        },
+        "lg": {
+          "value": "1024px",
+          "type": "other"
+        },
+        "xl": {
+          "value": "1280px",
+          "type": "other"
+        }
+      },
+      "z": {
+        "base": {
+          "value": "0",
+          "type": "other"
+        },
+        "dropdown": {
+          "value": "1000",
+          "type": "other"
+        },
+        "modal": {
+          "value": "1200",
+          "type": "other"
+        },
+        "toast": {
+          "value": "1400",
+          "type": "other"
+        }
+      },
+      "icon": {
+        "fill": {
+          "value": "0",
+          "type": "number"
+        },
+        "weight": {
+          "value": "400",
+          "type": "number"
+        },
+        "grade": {
+          "value": "0",
+          "type": "number"
+        },
+        "opticalSize": {
+          "value": "24",
+          "type": "number"
+        },
+        "size": {
+          "value": "20px",
+          "type": "dimension"
+        }
+      }
+    }
+  }
+}

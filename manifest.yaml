@@ -13,7 +13,6 @@ entry:
 
 theme:
   tokensVersion: "1.0.0"
-  darkMode: true
   inherits: "chips-official.default-theme"
 
 locales:

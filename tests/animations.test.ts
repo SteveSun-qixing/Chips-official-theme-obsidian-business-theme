@@ -7,22 +7,17 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 describe('Animations', () => {
-  it('should have transitions.css file', () => {
+  it('contains required animation files', () => {
+    const keyframesPath = path.join(__dirname, '..', 'animations', 'keyframes.css');
     const transitionsPath = path.join(__dirname, '..', 'animations', 'transitions.css');
+    expect(fs.existsSync(keyframesPath)).toBe(true);
     expect(fs.existsSync(transitionsPath)).toBe(true);
   });
 
-  it('should have keyframes.css file', () => {
-    const keyframesPath = path.join(__dirname, '..', 'animations', 'keyframes.css');
-    expect(fs.existsSync(keyframesPath)).toBe(true);
-  });
-
-  it('should define keyframe animations', () => {
-    const keyframesPath = path.join(__dirname, '..', 'animations', 'keyframes.css');
-    const content = fs.readFileSync(keyframesPath, 'utf-8');
-
-    // 检查是否定义了关键帧动画
-    expect(content).toContain('@keyframes');
-    expect(content).toContain('chips-');
+  it('keeps keyframe and transition definitions', () => {
+    const keyframes = fs.readFileSync(path.join(__dirname, '..', 'animations', 'keyframes.css'), 'utf-8');
+    const transitions = fs.readFileSync(path.join(__dirname, '..', 'animations', 'transitions.css'), 'utf-8');
+    expect(keyframes).toContain('@keyframes');
+    expect(transitions).toContain('.chips-transition');
   });
 });

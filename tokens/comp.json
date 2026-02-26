@@ -1,0 +1,48 @@
+{
+  "chips": {
+    "comp": {
+      "elevation": {
+        "sm": {
+          "value": "{chips.ref.shadow.sm}",
+          "type": "boxShadow"
+        },
+        "md": {
+          "value": "{chips.ref.shadow.md}",
+          "type": "boxShadow"
+        },
+        "lg": {
+          "value": "{chips.ref.shadow.lg}",
+          "type": "boxShadow"
+        }
+      },
+      "opacity": {
+        "disabled": {
+          "value": "{chips.ref.opacity.disabled}",
+          "type": "opacity"
+        }
+      },
+      "icon": {
+        "fill": {
+          "value": "{chips.sys.icon.fill}",
+          "type": "number"
+        },
+        "weight": {
+          "value": "{chips.sys.icon.weight}",
+          "type": "number"
+        },
+        "grade": {
+          "value": "{chips.sys.icon.grade}",
+          "type": "number"
+        },
+        "opticalSize": {
+          "value": "{chips.sys.icon.opticalSize}",
+          "type": "number"
+        },
+        "size": {
+          "value": "{chips.sys.icon.size}",
+          "type": "dimension"
+        }
+      }
+    }
+  }
+}

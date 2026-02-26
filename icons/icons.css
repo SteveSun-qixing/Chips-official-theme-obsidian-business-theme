@@ -1,6 +1,4 @@
-/* 图标 CSS 变量映射 */
 :root {
-  /* 常用图标 - 使用 Lucide Icons */
   --chips-icon-close: url('svg/x.svg');
   --chips-icon-check: url('svg/check.svg');
   --chips-icon-chevron-down: url('svg/chevron-down.svg');
@@ -33,11 +31,29 @@
   --chips-icon-external: url('svg/external-link.svg');
 }
 
-/* 图标通用样式 */
 .chips-icon {
-  display: inline-block;
-  width: 1em;
-  height: 1em;
+  display: inline-flex;
+  width: var(--chips-sys-icon-size, 1em);
+  height: var(--chips-sys-icon-size, 1em);
+  flex-shrink: 0;
   vertical-align: middle;
-  fill: currentColor;
+  color: currentColor;
+  font-variation-settings:
+    'FILL' var(--chips-sys-icon-fill, 0),
+    'wght' var(--chips-sys-icon-weight, 400),
+    'GRAD' var(--chips-sys-icon-grade, 0),
+    'opsz' var(--chips-sys-icon-optical-size, 24);
+}
+
+.chips-icon-mask {
+  display: inline-block;
+  width: var(--chips-sys-icon-size, 1em);
+  height: var(--chips-sys-icon-size, 1em);
+  background-color: currentColor;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
 }

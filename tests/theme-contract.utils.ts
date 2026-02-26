@@ -21,8 +21,8 @@ export interface ThemeComponentContract {
 
 export interface ThemeInterfaceContract {
   version: string;
-  generatedAt: string;
-  description: string;
+  generatedAt?: string;
+  description?: string;
   placeholderMarkers: string[];
   components: ThemeComponentContract[];
 }
@@ -40,4 +40,15 @@ export function readComponentStyle(file: string): string {
 
 export function getVariableRefs(content: string): string[] {
   return content.match(/var\(--chips-[a-z0-9-]+(?:,\s*[^)]+)?\)/g) ?? [];
+}
+
+export function hasPath(input: unknown, segments: string[]): boolean {
+  let current: unknown = input;
+  for (const segment of segments) {
+    if (!current || typeof current !== 'object' || !(segment in (current as Record<string, unknown>))) {
+      return false;
+    }
+    current = (current as Record<string, unknown>)[segment];
+  }
+  return true;
 }
